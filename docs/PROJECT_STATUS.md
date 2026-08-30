@@ -6,6 +6,7 @@
 - Hosted gate: blocked — no dedicated Supabase project or matching Vercel/Netlify project exists
 - Real-data gate: blocked — no iPhone pilot, official FIT decoder, or owner consent run
 - Agent gate: prepared — MCP/plugin/widget packages exist; no real Codex/ChatGPT connection yet
+- Source publication: private GitHub PR open; hosted CI blocked before steps by account billing
 - GA: not promoted
 
 Next non-sensitive action: confirm/create the dedicated Supabase project after organization and cost review, then run hosted synthetic RLS/Storage verification.

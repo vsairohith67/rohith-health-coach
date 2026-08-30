@@ -11,7 +11,10 @@
     "default_branch": "main",
     "baseline_head": "2eb3b1fb48658317005d2bf9d66c5ca3c8d9cbe6",
     "release_branch": "integration/rc4-private-ai",
-    "ci": "pending_final_review_and_main_runs"
+    "first_blocked_review_head": "55e350fa591d03fd5b4f68982fad83a199d4fb12",
+    "pull_request": "https://github.com/vsairohith67/rohith-health-coach/pull/1",
+    "ci": "blocked_before_steps_by_account_billing",
+    "merged": false
   },
   "supabase": {
     "organization": "Supabase test Organisation",

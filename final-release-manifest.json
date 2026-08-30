@@ -57,6 +57,7 @@
     "FINAL_VISUAL_QA_REPORT.md"
   ],
   "blockers": [
+    "github_actions_blocked_before_steps_by_account_billing",
     "hosted_health_platform_absent",
     "local_model_not_benchmarked",
     "mcp_inspector_not_run",
