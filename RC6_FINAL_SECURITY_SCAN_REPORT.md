@@ -30,4 +30,4 @@ Scanned: 2026-08-30
 
 Final source/build scan: **PASS**.
 
-The RC6 ZIP contains 324 files with zero forbidden entries. Its clean pre-install extraction passed a 318-text-file credential scan and zero-forbidden-private-file scan; the extracted Production build passed a 644-text-file scan with zero client secret markers.
+The RC6 ZIP contains 324 files with zero forbidden entries. Its clean pre-install extraction passed a 318-text-file credential scan and zero-forbidden-private-file scan; the final extracted Production build passed a 664-text-file scan with zero client secret markers.
