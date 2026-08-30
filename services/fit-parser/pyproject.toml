@@ -1,6 +1,6 @@
 [project]
 name = "rohith-health-fit-parser"
-version = "1.0.0rc4"
+version = "1.0.0rc5"
 description = "Private Garmin FIT validation and normalization worker"
 requires-python = ">=3.12"
 dependencies = [

@@ -1,7 +1,7 @@
-# Release notes — 1.0.0-rc4
+# Release notes — 1.0.0-rc6
 
-RC4 delivers the complete local/private release candidate: responsive deterministic PWA, reproducible Supabase schema/RLS/private Storage, secure Shortcut ingestion boundary, fail-closed FIT worker, bounded Health Query Service, local-first AI gateway, seventeen read-only MCP tools, OAuth/PKCE primitives, private Codex plugin, structured ChatGPT widget, and 220 fixed synthetic evaluations.
+RC6 implements the private Auth application boundary: passwordless login cannot auto-create unknown users, login feedback does not enumerate accounts, callback and confirmation routes validate credentials and reject open redirects, server authorization uses verified claims/current users, and Production cookies are Secure, HttpOnly, SameSite=Lax, and path-scoped.
 
-Hardening includes explicit Data API grants, server-only canonical writes, narrowed account-deletion RPC, generated DB types, digest/frozen container build, pinned CI action SHAs, PWA private-cache protections, medical/prompt-injection validation, and extracted-archive secret scans.
+The compiled Production shell denies nine private pages and raw APIs when unauthenticated, never renders Demo fixtures, never caches private documents/APIs, and keeps AI, MCP, phone automation, Garmin cloud, and real data disabled. The source gate passed 282 unit/integration assertions, 55 database tests, five FIT tests, 222 evaluation assertions, and 16 Playwright cases.
 
-GA is not promoted. Hosted infrastructure, physical iPhone/real data, official FIT decoder, local model, Codex installation, and private ChatGPT connection remain separate gates.
+Hosted Supabase still reports `disable_signup=false`. The supported Dashboard/Management API mutation was unavailable without owner authentication, so the direct signup probes, exact Auth URL readback, owner invitation, Vercel Production deployment, and 24-case Production E2E remain correctly stopped. RC6 is therefore a sanitized partial security release, not real-data clearance.

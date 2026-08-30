@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-08-30T16:55:00+05:30",
+  "project": "Rohith Health Coach",
+  "version": "1.0.0-rc5",
+  "status": "partially_complete",
+  "data_classification": "synthetic_only",
+  "github": {
+    "repository": "vsairohith67/rohith-health-coach",
+    "visibility": "private",
+    "pull_request": 1,
+    "pr_head": "91f839a763df39e2fed516fe27a879f39eb0757a",
+    "ci_run": 33304275915,
+    "ci": "success",
+    "merged": true,
+    "main_merge_commit": "f6af08dd9302cd76323ee0cd15e92f6ea78760d3",
+    "rc5_branch": "codex/rc5-hosted-synthetic",
+    "rc5_implementation_commit": "2e376b8b1b42c098fb19d5dfbecbbea6501c3565"
+  },
+  "supabase": {
+    "organization": "Supabase test Organisation",
+    "organization_id": "fqskwypboimofbiwfrat",
+    "plan": "free",
+    "project": "rohith-health-coach-prod",
+    "project_ref": "wmzrkkqcfvuhjpduplod",
+    "region": "ap-south-1",
+    "migrations": "5_applied",
+    "database_reproducibility": "55_of_55_passed",
+    "rls": "179_of_179_passed",
+    "storage": "21_of_21_passed",
+    "ingestion": "26_of_26_passed",
+    "auth": "blocked_public_signup_enabled",
+    "synthetic_cleanup": "passed_zero_remaining"
+  },
+  "source_arbitration": {
+    "tests": "12_of_12_passed",
+    "garmin_4861_iphone_8148": "selected_garmin_4861_not_13009",
+    "ambiguous_overlap": "conflict_no_total",
+    "apple_shortcut_steps_pilot": "excluded_until_source_proven_on_device"
+  },
+  "vercel": {
+    "team_id": "team_LO8H9E9FSHIgcfz1I0yTc4is",
+    "plan": "hobby",
+    "project": "rohith-health-coach",
+    "project_id": "prj_l23ScHanPfBEMXz3TjQ8w2KXIGN8",
+    "preview_deployment": "dpl_9Nvo44Yy8w9UuYGwuoDgr1hSWuTM",
+    "preview_url": "https://rohith-health-coach-o5c3ognoj-vsairohith67-1182s-projects.vercel.app",
+    "preview": "passed_synthetic_only",
+    "preview_route_checks": "28_of_28_passed",
+    "preview_accessibility": "3_of_3_passed_zero_serious_or_critical",
+    "production_alias": "https://rohith-health-coach.vercel.app",
+    "production": "unapproved_demo_only_target_created_by_preview_target_mismatch",
+    "private_production_shell": "blocked_by_auth",
+    "git_link_readback": "not_independently_verified"
+  },
+  "netlify": {
+    "status": "not_used"
+  },
+  "tracking": {
+    "notion": "sanitized_rc5_status_synced_and_read_back",
+    "asana_project": "Rohith Health Coach — RC4 to Private Pilot",
+    "asana": "nine_existing_tasks_updated_and_read_back"
+  },
+  "real_data_readiness": "NOT SAFE FOR REAL DATA",
+  "real_data_pilot": "NOT STARTED",
+  "phone_automation": "DISABLED",
+  "ai": "DISABLED",
+  "mcp": "DISABLED",
+  "chatgpt": "DISABLED",
+  "codex": "DISABLED",
+  "garmin_cloud_api": "DISABLED",
+  "fit_cloud_worker": "DISABLED_LOCAL_BOUNDARY_ONLY",
+  "ga": "NOT_PROMOTED",
+  "paid_change_made": false,
+  "expected_incremental_cost": "$0"
+}

@@ -1,10 +1,12 @@
 import { AppShell } from "../../../components/app-shell";
 import { DemoBanner } from "../../../components/demo-banner";
+import { isDemoMode } from "../../../lib/runtime-mode";
 
 export default function AiSettingsPage() {
+  const demoMode = isDemoMode();
   return (
-    <AppShell>
-      <DemoBanner />
+    <AppShell privateMode={!demoMode}>
+      {demoMode ? <DemoBanner /> : null}
       <header className="section-header">
         <p>Privacy and integrations</p>
         <h1>AI providers</h1>
@@ -31,17 +33,14 @@ export default function AiSettingsPage() {
             </p>
           </article>
           <article>
-            <span className="status-pill ready">Prepared</span>
+            <span className="status-pill off">Off</span>
             <h3>Codex MCP</h3>
-            <p>Read-only package ready; it has not been registered in Codex.</p>
+            <p>No Codex MCP connection is enabled.</p>
           </article>
           <article>
-            <span className="status-pill ready">Prepared</span>
+            <span className="status-pill off">Off</span>
             <h3>ChatGPT private app</h3>
-            <p>
-              Private setup ready; account capability and connection are
-              unverified.
-            </p>
+            <p>No ChatGPT app connection is enabled.</p>
           </article>
           <article>
             <span className="status-pill off">Off</span>

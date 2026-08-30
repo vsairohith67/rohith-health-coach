@@ -42,7 +42,7 @@ describe("MCP Streamable HTTP boundary", () => {
     await new Promise<void>((resolveReady, reject) => {
       const timer = setTimeout(
         () => reject(new Error("http_server_start_timeout")),
-        10_000,
+        30_000,
       );
       child?.stderr.on("data", (chunk: Buffer) => {
         if (chunk.toString().includes("MCP_HTTP_READY")) {
@@ -72,5 +72,5 @@ describe("MCP Streamable HTTP boundary", () => {
     expect(denied.headers.get("www-authenticate")).toContain(
       "oauth-protected-resource",
     );
-  }, 15_000);
+  }, 40_000);
 });

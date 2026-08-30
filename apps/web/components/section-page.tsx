@@ -232,6 +232,103 @@ export function ProductSection({ section }: Readonly<{ section: string }>) {
           </table>
         </section>
       ) : null}
+      {section === "data-sources" ? (
+        <>
+          <section className="status-table" aria-labelledby="arbitration-title">
+            <h2 id="arbitration-title">Source arbitration diagnostic</h2>
+            <p>
+              Synthetic full-day overlap · diagnostic{" "}
+              <code>overlap_not_combined</code>
+            </p>
+            <table>
+              <caption>Garmin and iPhone synthetic step conflict</caption>
+              <thead>
+                <tr>
+                  <th>Observation</th>
+                  <th>Value</th>
+                  <th>Coverage</th>
+                  <th>Decision</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Garmin Connect / CIRQA</td>
+                  <td>4,861 steps</td>
+                  <td>Complete, overlapping</td>
+                  <td>Authoritative</td>
+                </tr>
+                <tr>
+                  <td>iPhone</td>
+                  <td>8,148 steps</td>
+                  <td>Complete, overlapping</td>
+                  <td>Preserved alternative</td>
+                </tr>
+                <tr>
+                  <td>Daily analytics</td>
+                  <td>4,861 steps</td>
+                  <td>Conflict recorded</td>
+                  <td>Selected; not summed</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The unsafe 13,009-step total was not produced. When overlap is
+              ambiguous and no authoritative source exists, the result is
+              unavailable rather than invented.
+            </p>
+          </section>
+          <section
+            className="status-table"
+            aria-labelledby="preview-states-title"
+          >
+            <h2 id="preview-states-title">Synthetic preview states</h2>
+            <table>
+              <caption>Fail-closed health-data display states</caption>
+              <thead>
+                <tr>
+                  <th>State</th>
+                  <th>Rendered example</th>
+                  <th>Safety treatment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Loading</td>
+                  <td>
+                    <span aria-busy="true">Loading source coverage…</span>
+                  </td>
+                  <td>No previous health number substituted</td>
+                </tr>
+                <tr>
+                  <td>Empty</td>
+                  <td>No synthetic records yet</td>
+                  <td>Empty is not displayed as zero</td>
+                </tr>
+                <tr>
+                  <td>Partial</td>
+                  <td>2,100 synthetic steps · partial day</td>
+                  <td>Excluded from complete-day comparison</td>
+                </tr>
+                <tr>
+                  <td>Stale</td>
+                  <td>Last synthetic update 2 days ago · stale</td>
+                  <td>Freshness warning remains visible</td>
+                </tr>
+                <tr>
+                  <td>Unsupported</td>
+                  <td>Body Battery unavailable</td>
+                  <td>No inferred replacement metric</td>
+                </tr>
+                <tr>
+                  <td>Conflict</td>
+                  <td>No total · source conflict</td>
+                  <td>Alternatives preserved; no combined value</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </>
+      ) : null}
       {section === "data-dictionary" ? (
         <section className="status-table">
           <h2>Missing data example</h2>

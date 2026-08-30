@@ -1,4 +1,4 @@
-const CACHE = "rohith-health-shell-v1";
+const CACHE = "rohith-health-shell-v2";
 const SHELL = ["/icon.svg", "/manifest.webmanifest"];
 self.addEventListener("install", (event) =>
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(SHELL))),

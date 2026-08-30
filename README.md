@@ -1,14 +1,15 @@
 # Rohith Health Coach
 
-Rohith Health Coach is a private, evidence-led personal health PWA. The RC4 source release combines deterministic daily aggregation and coaching with an optional, default-off AI explanation layer, a read-only MCP server, a private Codex plugin, and a ChatGPT widget contract.
+Rohith Health Coach is a private, evidence-led personal health PWA. The RC5 source release combines deterministic daily aggregation and coaching with hosted synthetic security evidence, fail-closed source arbitration, and optional AI/MCP surfaces that remain disabled.
 
-**Release status:** RC4 is locally verified. General availability and real-data readiness are **not** approved because no hosted Supabase project, private ChatGPT connection, Codex installation, official Garmin FIT decoder, or real iPhone data pilot has been completed.
+**Release status:** RC5 passed hosted synthetic RLS, Storage, ingestion, source-arbitration, and Vercel Preview checks. General availability and real-data readiness are **not** approved because Supabase public email signup remains enabled and the authenticated Production E2E flow has not run.
 
 ## What works now
 
 - A polished responsive Demo Mode built from a fixed 90-day synthetic profile.
 - Missing/partial/conflicting data semantics, robust baselines, bounded trends, and deterministic coaching.
-- Reproducible Supabase migrations, private Storage policies, hashed ingestion credentials, and 40 local adversarial RLS assertions.
+- Reproducible Supabase migrations, private Storage policies, HMAC-hashed ingestion credentials, 55 local database assertions, 179 hosted RLS checks, 21 hosted Storage checks, and 26 hosted ingestion checks.
+- Garmin-first source arbitration that preserves alternatives, rejects ambiguous totals, and deduplicates overlapping Apple Health/FIT workouts.
 - A fail-closed FastAPI FIT boundary. Validation works; full decode requires an owner-installed official Garmin FIT SDK adapter.
 - Eighteen query operations, seventeen read-only MCP tools, OAuth 2.1/PKCE primitives, and a constrained widget.
 - A local-only OpenAI-compatible narrative adapter. External AI providers remain disabled.
@@ -56,4 +57,4 @@ All AI, MCP, ChatGPT, public signup, Garmin Cloud API, raw-health-to-AI, notes-t
 - `plugins/rohith-health` — private Codex plugin package.
 - `docs` — setup, safety, deployment, and owner handoff.
 
-Begin with [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/PRIVACY.md](docs/PRIVACY.md), and [FINAL_REAL_DATA_READINESS.md](FINAL_REAL_DATA_READINESS.md). Operational activation is intentionally separate from software clearance.
+Begin with [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/PRIVACY.md](docs/PRIVACY.md), and [FINAL_REAL_DATA_READINESS.md](FINAL_REAL_DATA_READINESS.md). Operational activation is intentionally separate from software clearance. See [RC5_HOSTED_AUTH_REPORT.md](RC5_HOSTED_AUTH_REPORT.md) for the single open safety gate.

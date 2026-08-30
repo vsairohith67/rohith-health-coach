@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     max_upload_bytes: int = Field(default=25 * 1024 * 1024, ge=1024, le=100 * 1024 * 1024)
     official_decoder_path: str | None = None
     official_decoder_sha256: str | None = None
-    parser_version: str = "1.0.0-rc4"
+    parser_version: str = "1.0.0-rc5"
     profile_version: str = "unavailable"
     requests_per_minute: int = Field(default=20, ge=1, le=300)
 

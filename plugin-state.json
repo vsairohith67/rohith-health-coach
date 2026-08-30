@@ -1,6 +1,6 @@
 {
   "project": "Rohith Health Coach",
-  "plugin_version": "1.0.0-rc4",
+  "plugin_version": "1.0.0-rc6",
   "mcp": {
     "stdio": "passed",
     "http": "passed",

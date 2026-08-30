@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-08-30T21:30:00+05:30",
+  "project": "Rohith Health Coach",
+  "version": "1.0.0-rc6",
+  "status": "partially_complete",
+  "data_classification": "synthetic_only",
+  "github": {
+    "repository": "vsairohith67/rohith-health-coach",
+    "visibility_readback": "public",
+    "pull_request": 1,
+    "ci_run": 33304275915,
+    "ci": "success",
+    "merged": true,
+    "main_merge_commit": "f6af08dd9302cd76323ee0cd15e92f6ea78760d3",
+    "rc5_head": "304fcce7493cd94f05cac3d2570da52f8d431d8d",
+    "rc6_branch": "codex/rc6-auth-production"
+  },
+  "supabase": {
+    "organization": "Supabase test Organisation",
+    "organization_id": "fqskwypboimofbiwfrat",
+    "plan": "free",
+    "project": "rohith-health-coach-prod",
+    "project_ref": "wmzrkkqcfvuhjpduplod",
+    "region": "ap-south-1",
+    "email_authentication": "enabled",
+    "public_signup": "enabled_blocking",
+    "anonymous_auth": "disabled",
+    "phone_auth": "disabled",
+    "social_providers": "disabled",
+    "auth_users": 0,
+    "application_rows": 0,
+    "storage_objects": 0
+  },
+  "auth_code": {
+    "should_create_user": false,
+    "public_signup_ui": false,
+    "server_identity": "getClaims_and_getUser",
+    "cookie_policy": "HttpOnly_SameSiteLax_PathRoot_SecureInProduction",
+    "callback_attacks": "11_of_11_passed",
+    "signup_negative_tests": "2_of_6_passed_4_not_run",
+    "owner_account": "ready_for_user_action"
+  },
+  "vercel": {
+    "team_id": "team_LO8H9E9FSHIgcfz1I0yTc4is",
+    "plan": "hobby",
+    "project": "rohith-health-coach",
+    "project_id": "prj_l23ScHanPfBEMXz3TjQ8w2KXIGN8",
+    "preview": "ready_synthetic_only",
+    "production_url": "https://rohith-health-coach.vercel.app",
+    "production": "not_deployed_rc6_existing_demo_target_only"
+  },
+  "verification": {
+    "unit_integration": "282_of_282_passed",
+    "database": "55_of_55_passed",
+    "database_lint": "passed_zero_findings",
+    "fit": "5_of_5_passed",
+    "agent_evaluation_harness": "222_of_222_passed",
+    "playwright": "16_of_16_passed",
+    "compiled_unauthenticated_shell": "10_of_10_passed",
+    "hosted_production_e2e": "0_of_24_not_run"
+  },
+  "tracking": {
+    "notion": "sanitized_rc6_status_updated_and_read_back",
+    "asana_project": "Rohith Health Coach — RC4 to Private Pilot",
+    "asana": "existing_tasks_updated_and_read_back_no_duplicates"
+  },
+  "real_data_readiness": "NOT SAFE FOR REAL DATA",
+  "real_health_data": "DISABLED",
+  "phone_automation": "DISABLED",
+  "ai": "DISABLED",
+  "mcp": "DISABLED",
+  "chatgpt": "DISABLED",
+  "codex": "DISABLED",
+  "garmin_cloud_api": "DISABLED",
+  "ga": "NOT_PROMOTED",
+  "paid_change_made": false,
+  "expected_incremental_cost": "$0"
+}

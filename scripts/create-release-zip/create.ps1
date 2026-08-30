@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
-  [ValidateSet("rc1", "rc2", "rc3", "rc4")]
-  [string]$Version = "rc4",
+  [ValidateSet("rc1", "rc2", "rc3", "rc4", "rc5", "rc6")]
+  [string]$Version = "rc6",
   [string]$OutputDirectory = "release"
 )
 
@@ -18,25 +18,25 @@ if (Test-Path -LiteralPath $archive) { Remove-Item -LiteralPath $archive -Force 
 $staging = Join-Path ([System.IO.Path]::GetTempPath()) ("rohith-health-release-" + [guid]::NewGuid().ToString("N"))
 $payload = Join-Path $staging "rohith-health-coach"
 [System.IO.Directory]::CreateDirectory($payload) | Out-Null
-$excludedDirectories = @(".git", ".next", ".venv", ".pytest_cache", ".ruff_cache", ".temp", ".branches", "node_modules", "playwright-report", "release", "test-results")
+$excludedDirectories = @(".git", ".next", ".venv", ".vercel", ".supabase", ".pytest_cache", ".ruff_cache", ".temp", ".branches", ".turbo", "__pycache__", "coverage", "node_modules", "playwright-report", "release", "test-results")
 try {
   Get-ChildItem -LiteralPath $repoRoot -Recurse -Force -File | ForEach-Object {
     $relative = [System.IO.Path]::GetRelativePath($repoRoot, $_.FullName)
     $segments = $relative -split '[\\/]'
     if ($segments | Where-Object { $_ -in $excludedDirectories }) { return }
-    if ($_.Name -in @("release-manifest.json", "release-checksums.txt", "final-release-manifest.json", "final-release-checksums.txt")) { return }
+    if ($_.Name -in @("release-manifest.json", "release-checksums.txt", "final-release-manifest.json", "final-release-checksums.txt", "rc5-release-manifest.json", "rc5-release-checksums.txt", "RC5_RELEASE_REPORT.md", "rc6-release-manifest.json", "rc6-release-checksums.txt", "RC6_RELEASE_REPORT.md")) { return }
     if ($_.Extension -ieq ".zip") { return }
     if ($_.Name -match '^\.env(?!\.example$)') { return }
-    if ($_.Extension -in @(".fit", ".gguf", ".log", ".pyc")) { return }
+    if ($_.Extension -in @(".fit", ".gguf", ".key", ".log", ".p12", ".pfx", ".pem", ".pyc")) { return }
     $destination = Join-Path $payload $relative
     [System.IO.Directory]::CreateDirectory([System.IO.Path]::GetDirectoryName($destination)) | Out-Null
     Copy-Item -LiteralPath $_.FullName -Destination $destination
   }
   $phase = [ordered]@{
     artifact = "rohith-health-coach-v1.0.0-$Version.zip"
-    source_version = "1.0.0-rc4"
+    source_version = "1.0.0-$Version"
     release_gate = $Version
-    reconstructed_from_cumulative_source = ($Version -ne "rc4")
+    reconstructed_from_cumulative_source = ($Version -in @("rc1", "rc2", "rc3"))
     contains_personal_health_data = $false
     production_integrations_enabled = $false
     generated_at = [DateTimeOffset]::UtcNow.ToString("o")

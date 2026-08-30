@@ -1,14 +1,21 @@
 # Project status
 
-- Version: `1.0.0-rc4`
-- Mode: private, Demo Mode ready; production integrations default-off
-- Local source gate: passed with the evidence listed in root reports
-- Hosted gate: blocked — no dedicated Supabase project or matching Vercel/Netlify project exists
-- Real-data gate: blocked — no iPhone pilot, official FIT decoder, or owner consent run
-- Agent gate: prepared — MCP/plugin/widget packages exist; no real Codex/ChatGPT connection yet
-- Source publication: private GitHub PR open; hosted CI blocked before steps by account billing
+- Version: `1.0.0-rc6`
+- Mode: private, synthetic-only; production integrations default-off
+- GitHub: RC4 PR merged to `main`; exact hosted Python and JavaScript CI passed
+- Supabase: free Mumbai project created; five migrations applied; hosted RLS, Storage, and ingestion matrices passed
+- Source arbitration: Garmin/iPhone overlap and ambiguity tests passed without unsafe summation
+- Vercel: synthetic Preview passed; an initial Preview request was classified by Vercel as a Demo-only Production target and is not accepted as the private Production shell
+- Auth code: private passwordless login, verified callbacks, SSR identity checks, hardened cookies, and empty Production shell implemented and tested
+- Hosted Auth: still blocked because public email signup readback is `disable_signup=false`
+- Hosted Production/E2E: not run past the Auth stop gate; 0/24
+- Real-data pilot: not started
+- Phone automation, AI, MCP, ChatGPT, Codex, Garmin cloud API: disabled
+- FIT cloud worker: disabled; local boundary only
 - GA: not promoted
 
-Next non-sensitive action: confirm/create the dedicated Supabase project after organization and cost review, then run hosted synthetic RLS/Storage verification.
+Core hosted platform: **NOT SAFE FOR REAL DATA**.
 
-This status contains no health values, reports, tokens, URLs containing credentials, or personal medical information. A matching sanitized Notion child page was created once after the terminal RC4 verdict and read back successfully.
+Next action: authenticate the Supabase Dashboard, disable public signup, and save/read back the exact private Auth URL/session configuration.
+
+This status contains no health records, credentials, tokens, signed URLs, FIT data, or personal medical information.

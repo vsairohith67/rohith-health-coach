@@ -1402,7 +1402,7 @@ export type Database = {
           p_device_id: string;
           p_expires_at?: string;
           p_rotation_parent_id?: string;
-          p_token_hash: string;
+          p_token: string;
           p_token_hint: string;
           p_user_id: string;
         };

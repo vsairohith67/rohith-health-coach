@@ -23,7 +23,7 @@ async def lifespan(_: FastAPI):
 
 app = FastAPI(
     title="Rohith Health Coach FIT parser",
-    version="1.0.0-rc4",
+    version="1.0.0-rc5",
     docs_url=None,
     redoc_url=None,
     lifespan=lifespan,

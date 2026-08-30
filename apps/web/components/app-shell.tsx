@@ -28,7 +28,8 @@ const mobileNavigation: Array<{ href: string; label: string; icon: IconName }> =
 
 export function AppShell({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  privateMode = false,
+}: Readonly<{ children: React.ReactNode; privateMode?: boolean }>) {
   const pathname = usePathname();
   return (
     <div className="app-shell">
@@ -67,6 +68,20 @@ export function AppShell({
         <Link className="privacy-link" href="/privacy">
           Privacy details <span aria-hidden="true">↗</span>
         </Link>
+        {privateMode ? (
+          <form
+            className="sign-out-form"
+            action="/auth/sign-out"
+            method="post"
+            onSubmit={() =>
+              navigator.serviceWorker?.controller?.postMessage(
+                "CLEAR_PRIVATE_CACHE",
+              )
+            }
+          >
+            <button type="submit">Sign out</button>
+          </form>
+        ) : null}
       </aside>
       <header className="mobile-header">
         <Link className="mobile-brand" href="/today">
