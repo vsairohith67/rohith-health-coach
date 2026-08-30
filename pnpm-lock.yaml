@@ -118,6 +118,8 @@ importers:
 
   packages/health-query-service: {}
 
+  packages/source-arbitration: {}
+
   services/health-ai-gateway: {}
 
   services/health-mcp: {}
