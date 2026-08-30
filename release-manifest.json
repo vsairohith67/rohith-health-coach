@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "project": "Rohith Health Coach",
+  "version": "1.0.0-rc3-compatibility",
+  "generated_at": "2026-08-30T08:40:16Z",
+  "source_commit": "2eb3b1fb48658317005d2bf9d66c5ca3c8d9cbe6",
+  "historical_input_available": false,
+  "reconstructed_from_cumulative_rc4_source": true,
+  "data_classification": "synthetic_only",
+  "real_data_enabled": false,
+  "deployment_status": "not_deployed",
+  "archive_metadata_distribution": "external_to_archives_to_avoid_self_referential_hashes",
+  "archives": [
+    {
+      "filename": "rohith-health-coach-v1.0.0-rc1.zip",
+      "sha256": "37e3253be241f828867c986771bb574b9333f3d4fc1add5c3c4223ac8dcfaedb",
+      "file_count": 268,
+      "uncompressed_size": 3526141,
+      "extraction_tested": true,
+      "reconstructed": true
+    },
+    {
+      "filename": "rohith-health-coach-v1.0.0-rc2.zip",
+      "sha256": "a7ca468a57b113f5b3ec4fe3eb33e9b196c94e818af843ca213b2a35734346a9",
+      "file_count": 268,
+      "uncompressed_size": 3526141,
+      "extraction_tested": true,
+      "reconstructed": true
+    },
+    {
+      "filename": "rohith-health-coach-v1.0.0-rc3.zip",
+      "sha256": "5563116c4dfb33cd460c18cd454b1665a67f2681fdd118b64842217d3ada752e",
+      "file_count": 268,
+      "uncompressed_size": 3526141,
+      "extraction_tested": true,
+      "reconstructed": true
+    }
+  ]
+}

@@ -6,11 +6,15 @@
   "data_classification": "synthetic_only",
   "github": {
     "account": "vsairohith67",
-    "repository": null,
-    "visibility": null,
-    "default_branch": null,
-    "exact_head": null,
-    "ci": "prepared"
+    "repository": "vsairohith67/rohith-health-coach",
+    "visibility": "private",
+    "default_branch": "main",
+    "baseline_head": "2eb3b1fb48658317005d2bf9d66c5ca3c8d9cbe6",
+    "release_branch": "integration/rc4-private-ai",
+    "first_blocked_review_head": "55e350fa591d03fd5b4f68982fad83a199d4fb12",
+    "pull_request": "https://github.com/vsairohith67/rohith-health-coach/pull/1",
+    "ci": "blocked_before_steps_by_account_billing",
+    "merged": false
   },
   "supabase": {
     "organization": "Supabase test Organisation",
@@ -37,8 +41,8 @@
   },
   "notion": {
     "workspace": "personal",
-    "status_page": null,
-    "status": "pending_terminal_sync"
+    "status_page": "https://app.notion.com/p/3ccc980127a881fd8dc3ffc35ada111e",
+    "status": "sanitized_terminal_status_synced_and_read_back"
   },
   "ai": {
     "deterministic": "enabled",

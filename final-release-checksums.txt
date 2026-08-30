@@ -1,0 +1,2 @@
+e55b89f95fc40efa902f96e5c8f3938f71ce91d6e16361f7f5da0f78affb6b36  rohith-health-coach-v1.0.0-rc4.zip
+f7e4024761e6d66fc0da4f706c1247b417491b40a0b61781dc3199632c187d2c  rohith-health-private-plugin-v1.0.0-rc4.zip
