@@ -13,8 +13,8 @@ Verified: 2026-08-30
 - Site URL: `https://rohith-health-coach.vercel.app`
 - Production callback: `https://rohith-health-coach.vercel.app/auth/callback`
 - Production confirmation/recovery: `https://rohith-health-coach.vercel.app/auth/confirm`
-- Local callback: `http://localhost:3000/auth/callback`
-- Local confirmation/recovery: `http://localhost:3000/auth/confirm`
+- Local callback: `http://127.0.0.1:3000/auth/callback`
+- Local confirmation/recovery: `http://127.0.0.1:3000/auth/confirm`
 - Preview callbacks: none.
 - Wildcards: none.
 
