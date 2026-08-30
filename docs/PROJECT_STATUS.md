@@ -11,4 +11,4 @@
 
 Next non-sensitive action: confirm/create the dedicated Supabase project after organization and cost review, then run hosted synthetic RLS/Storage verification.
 
-This status contains no health values, reports, tokens, URLs containing credentials, or personal medical information. A matching sanitized Notion child page is created only after the terminal RC4 verdict.
+This status contains no health values, reports, tokens, URLs containing credentials, or personal medical information. A matching sanitized Notion child page was created once after the terminal RC4 verdict and read back successfully.

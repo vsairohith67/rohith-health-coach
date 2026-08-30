@@ -41,8 +41,8 @@
   },
   "notion": {
     "workspace": "personal",
-    "status_page": null,
-    "status": "pending_terminal_sync"
+    "status_page": "https://app.notion.com/p/3ccc980127a881fd8dc3ffc35ada111e",
+    "status": "sanitized_terminal_status_synced_and_read_back"
   },
   "ai": {
     "deterministic": "enabled",
