@@ -1,6 +1,6 @@
 {
   "name": "rohith-health-coach",
-  "version": "1.0.0-rc6",
+  "version": "1.0.0-rc7",
   "private": true,
   "type": "module",
   "packageManager": "pnpm@10.17.1",
@@ -28,6 +28,7 @@
     "release:rc4": "pwsh -NoProfile -File scripts/create-final-release/create.ps1",
     "release:rc5": "pwsh -NoProfile -File scripts/create-release-zip/create.ps1 -Version rc5",
     "release:rc6": "pwsh -NoProfile -File scripts/create-release-zip/create.ps1 -Version rc6",
+    "release:rc7": "pwsh -NoProfile -File scripts/create-release-zip/create.ps1 -Version rc7",
     "release:all": "pwsh -NoProfile -Command \"foreach ($v in 'rc1','rc2','rc3') { & ./scripts/create-release-zip/create.ps1 -Version $v }; & ./scripts/create-final-release/create.ps1\"",
     "disable:all-ai": "pwsh -NoProfile -File scripts/disable-all-ai/disable.ps1",
     "db:test": "pnpm dlx supabase@2.116.0 test db",
