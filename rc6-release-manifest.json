@@ -3,13 +3,13 @@
   "project": "Rohith Health Coach",
   "version": "1.0.0-rc6",
   "generated_at": "2026-08-30T21:55:00+05:30",
-  "source_commit": "4b2792de90ecd436e241e841870ebed11eb63fbb",
+  "source_commit": "b54d0b45f6466a5d891773aed7ca1454534dca35",
   "archive": {
     "filename": "rohith-health-coach-v1.0.0-rc6.zip",
     "path": "release/rohith-health-coach-v1.0.0-rc6.zip",
-    "sha256": "24791d87b6612a2290586c00d5ca34807b7adc680aa9f57404e5703f11bb9a33",
-    "compressed_bytes": 3072906,
-    "uncompressed_bytes": 3743843,
+    "sha256": "6127379f2193c19b774d1416b4cab9b6c35d06e44d5623f2d6ec72848e0c8687",
+    "compressed_bytes": 3073054,
+    "uncompressed_bytes": 3744200,
     "file_count": 324,
     "data_classification": "synthetic_only",
     "forbidden_entry_count": 0
@@ -27,7 +27,7 @@
     "database_lint": "passed_zero_findings",
     "playwright": "16_of_16_passed",
     "production_build": "28_of_28_pages",
-    "secret_scan": "passed_332_text_files",
+    "secret_scan": "passed_335_text_files",
     "private_data_scan": "passed_zero_forbidden_files",
     "client_bundle_scan": "passed_zero_secret_marker_files"
   },
@@ -48,7 +48,7 @@
     "playwright": "16_of_16_passed",
     "production_build": "28_of_28_pages",
     "preinstall_secret_scan": "passed_318_text_files",
-    "build_secret_scan": "passed_644_text_files",
+    "build_secret_scan": "passed_664_text_files",
     "private_data_scan": "passed_zero_forbidden_files",
     "client_bundle_secret_scan": "passed_zero_secret_marker_files"
   },

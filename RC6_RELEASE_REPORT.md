@@ -5,12 +5,12 @@ Released: 2026-08-30 (Asia/Calcutta)
 ## Artifact
 
 - Version: `1.0.0-rc6`
-- Source commit: `4b2792de90ecd436e241e841870ebed11eb63fbb`
+- Source commit: `b54d0b45f6466a5d891773aed7ca1454534dca35`
 - Filename: `rohith-health-coach-v1.0.0-rc6.zip`
 - Path: `release/rohith-health-coach-v1.0.0-rc6.zip`
-- SHA-256: `24791d87b6612a2290586c00d5ca34807b7adc680aa9f57404e5703f11bb9a33`
-- Compressed size: 3,072,906 bytes
-- Uncompressed size: 3,743,843 bytes
+- SHA-256: `6127379f2193c19b774d1416b4cab9b6c35d06e44d5623f2d6ec72848e0c8687`
+- Compressed size: 3,073,054 bytes
+- Uncompressed size: 3,744,200 bytes
 - File count: 324
 - Data classification: synthetic only
 
@@ -31,7 +31,7 @@ The archive excludes `node_modules`, `.next`, `.git`, `.vercel`, `.supabase`, vi
 - Database schema lint: pass with zero findings.
 - Playwright: 16/16 pass.
 - Explicit private Production build: pass, 28/28 generated pages.
-- Final source secret scan: 332 text files, zero credential signatures.
+- Final evidence-inclusive source secret scan: 335 text files, zero credential signatures.
 - Production build scan: 858 text files, zero credential signatures; zero client secret-marker files.
 - Private-data filename scan: 340 source files considered, zero forbidden files.
 
@@ -52,12 +52,12 @@ The archive excludes `node_modules`, `.next`, `.git`, `.vercel`, `.supabase`, vi
 - Extracted database reproducibility: 55/55; schema lint zero findings.
 - Extracted Playwright: 16/16 pass.
 - Extracted explicit Production build: pass, 28/28 pages.
-- Extracted build secret scan: 644 text files, zero credential signatures.
+- Extracted build secret scan: 664 text files, zero credential signatures.
 - Extracted client bundle: zero server-secret markers; private empty state present; no Demo label, `4,861`, or `13,009`.
 
 The Playwright development server emits the expected React development warning because the Production CSP excludes `unsafe-eval`; React states that Production mode does not use eval. Both compiled Production builds passed.
 
-The verified extraction remains at `C:\Users\rohit\Documents\ChatGPT\AI Health Coach\rc6-extracted-verification-d71cec49`. Its exact resolved target was checked before cleanup, but host policy rejected the recursive deletion command. It contains only the sanitized extracted release plus verification dependencies/build caches and is not inside the ZIP.
+The complete extracted suite ran from `C:\Users\rohit\AppData\Local\Temp\rohith-health-rc6-final-5aa6071e`. After the final documentation-only scan-count correction, a fresh immutable extraction at `C:\Users\rohit\AppData\Local\Temp\rohith-health-rc6-immutable-4d09d3fb` passed 0 source-hash mismatches, 0 forbidden private files, and the 318-text-file scan. An earlier verified extraction remains at `C:\Users\rohit\Documents\ChatGPT\AI Health Coach\rc6-extracted-verification-d71cec49` because host policy rejected its exact, pre-verified recursive cleanup command. These directories contain only sanitized release verification material and are not in the ZIP.
 
 ## Hosted state
 
