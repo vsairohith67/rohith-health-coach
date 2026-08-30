@@ -1,7 +1,7 @@
-# Release notes — 1.0.0-rc4
+# Release notes — 1.0.0-rc5
 
-RC4 delivers the complete local/private release candidate: responsive deterministic PWA, reproducible Supabase schema/RLS/private Storage, secure Shortcut ingestion boundary, fail-closed FIT worker, bounded Health Query Service, local-first AI gateway, seventeen read-only MCP tools, OAuth/PKCE primitives, private Codex plugin, structured ChatGPT widget, and 220 fixed synthetic evaluations.
+RC5 proves the core data boundary on hosted synthetic infrastructure. The free Mumbai Supabase project has five reproducible migrations, 179/179 hosted RLS checks, 21/21 private Storage checks, and 26/26 hosted ingestion checks. Temporary synthetic users, records, and objects were deleted after verification.
 
-Hardening includes explicit Data API grants, server-only canonical writes, narrowed account-deletion RPC, generated DB types, digest/frozen container build, pinned CI action SHAs, PWA private-cache protections, medical/prompt-injection validation, and extracted-archive secret scans.
+Source arbitration now prefers valid Garmin coverage, uses iPhone only as a proven fallback, refuses ambiguous totals, and deduplicates the same Garmin workout received through Apple Health and FIT. The `4,861` Garmin plus `8,148` iPhone overlap case returns `4,861`, never `13,009`. Apple Shortcut provenance limitations are explicit, so Steps remain excluded from a real pilot until source identity is proven on-device.
 
-GA is not promoted. Hosted infrastructure, physical iPhone/real data, official FIT decoder, local model, Codex installation, and private ChatGPT connection remain separate gates.
+The synthetic Vercel Preview passed 28 route/viewport checks, three accessibility scans, PWA, dark-mode, reduced-motion, and conflict-state QA. Production and the full hosted E2E flow remain blocked because Supabase public email signup is still enabled. No real data, phone automation, AI, MCP, ChatGPT, Codex, Garmin cloud API, or GA promotion is enabled.

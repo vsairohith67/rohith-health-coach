@@ -26,6 +26,7 @@
     "verify:secrets": "node scripts/verify-no-secrets.mjs",
     "verify:release": "pwsh -NoProfile -File scripts/verify-final-release/verify.ps1",
     "release:rc4": "pwsh -NoProfile -File scripts/create-final-release/create.ps1",
+    "release:rc5": "pwsh -NoProfile -File scripts/create-release-zip/create.ps1 -Version rc5",
     "release:all": "pwsh -NoProfile -Command \"foreach ($v in 'rc1','rc2','rc3') { & ./scripts/create-release-zip/create.ps1 -Version $v }; & ./scripts/create-final-release/create.ps1\"",
     "disable:all-ai": "pwsh -NoProfile -File scripts/disable-all-ai/disable.ps1",
     "db:test": "pnpm dlx supabase@2.116.0 test db",

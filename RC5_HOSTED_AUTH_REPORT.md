@@ -32,6 +32,6 @@ No broad callback wildcard was added.
 
 **READY FOR USER ACTION**
 
-Sign in to the Supabase dashboard for `rohith-health-coach-prod`, disable new-user signup, and keep anonymous sign-in disabled. After a Vercel URL exists, add only the exact localhost, production, and necessary preview callback URLs, then read back the Auth settings. Do not create the private owner account until those settings are verified.
+Sign in to the Supabase dashboard for `rohith-health-coach-prod`, disable new-user signup, and keep anonymous sign-in disabled. Allow only `http://localhost:3000/auth/callback`, `https://rohith-health-coach.vercel.app/auth/callback`, and the exact RC5 Preview callback if Preview login is genuinely needed; do not add a broad wildcard. Then read back the callback, recovery, session-expiry, and cookie settings. Do not create the private owner account until those settings are verified.
 
 Result: hosted Auth is not yet an approved production gate. Production deployment and real-data readiness remain blocked.

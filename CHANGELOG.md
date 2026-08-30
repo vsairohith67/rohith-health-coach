@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-rc5 — 2026-08-30
+
+- Merged the green RC4 integration PR and verified its exact hosted CI result on `main`.
+- Created the free Mumbai Supabase foundation and applied/audited five reproducible migrations.
+- Added owner-relationship and ingestion-token hardening, then passed 179 hosted RLS, 21 hosted Storage, and 26 hosted ingestion checks with synthetic identities only.
+- Added fail-closed Garmin/iPhone source arbitration, workout deduplication, Apple Shortcut provenance limits, and 12 automated source cases.
+- Deployed and validated a synthetic-only Vercel Preview across seven exact viewports, six data states, accessibility, PWA, dark mode, and reduced motion.
+- Kept Production and real-data E2E blocked because public Supabase email signup remains enabled.
+
 ## 1.0.0-rc4 — 2026-08-30
 
 - Added Health Query Service, result/evidence contracts, AI safety/gateway, read-only MCP, OAuth primitives, Codex plugin, ChatGPT widget, and 220-case eval suite.
