@@ -4,7 +4,7 @@ Scanned: 2026-08-30
 
 ## Source tree
 
-- Credential-signature scan: **PASS**, 332 text files, zero findings.
+- Evidence-inclusive credential-signature scan: **PASS**, 335 text files, zero findings. The immutable archive candidate itself was scanned at 332 text files before the excluded checksum/manifest/report evidence was added.
 - Private-data filename scan: **PASS**, 340 source files considered, zero forbidden files.
 - Forbidden types checked include non-example environment files, FIT/GPX/TCX, private keys/certificates, logs, caches, build output, Vercel state, and linked Supabase state.
 - Email-shaped content appeared in five files only: one private-login unit test, three pgTAP security fixtures, and the RC5 hosted RLS matrix. All addresses are clearly synthetic/test-only; no owner address is present.
@@ -28,4 +28,6 @@ Scanned: 2026-08-30
 
 ## Verdict
 
-Final source/build scan: **PASS**. The RC6 ZIP is scanned separately after creation and extraction.
+Final source/build scan: **PASS**.
+
+The RC6 ZIP contains 324 files with zero forbidden entries. Its clean pre-install extraction passed a 318-text-file credential scan and zero-forbidden-private-file scan; the extracted Production build passed a 644-text-file scan with zero client secret markers.
