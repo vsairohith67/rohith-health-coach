@@ -31,6 +31,28 @@ export const healthSampleV1Schema = z
     source_name: z.string().min(1).max(120),
     source_bundle: z.string().max(180).nullable(),
     source_record_id: z.string().max(200).nullable(),
+    source_provider: z.string().min(1).max(120).nullable().optional(),
+    source_device: z
+      .object({
+        name: z.string().max(120).nullable(),
+        manufacturer: z.string().max(120).nullable(),
+        model: z.string().max(120).nullable(),
+        local_identifier: z.string().max(200).nullable(),
+      })
+      .strict()
+      .nullable()
+      .optional(),
+    aggregation: z
+      .enum(["daily_total", "interval_delta", "session_total", "point_summary"])
+      .optional(),
+    coverage: z
+      .object({
+        state: z.enum(["complete", "partial", "unknown"]),
+        current_day: z.boolean(),
+        fallback_gap_confirmed: z.boolean(),
+      })
+      .strict()
+      .optional(),
     metadata: z.record(z.string(), z.unknown()),
   })
   .strict()
@@ -76,6 +98,7 @@ export interface IngestionResult {
   ingestion_event_id: string;
   received: number;
   inserted: number;
+  updated: number;
   duplicates: number;
   rejected: number;
   conflicts: number;

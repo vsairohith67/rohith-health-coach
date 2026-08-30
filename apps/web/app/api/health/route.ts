@@ -3,7 +3,7 @@ export function GET() {
     {
       ok: true,
       service: "rohith-health-web",
-      version: "1.0.0-rc4",
+      version: "1.0.0-rc5",
       mode: "deterministic",
       syntheticOnly: true,
     },

@@ -94,6 +94,34 @@ test("PWA manifest and offline shell assets are present", async ({
   expect(source).toContain("CLEAR_PRIVATE_CACHE");
 });
 
+test("RC5 synthetic source diagnostics fail closed", async ({ page }) => {
+  await page.goto("/data-sources");
+  await expect(
+    page.getByRole("heading", { name: "Source arbitration diagnostic" }),
+  ).toBeVisible();
+  await expect(page.getByText("4,861 steps")).toHaveCount(2);
+  await expect(page.getByText("8,148 steps")).toBeVisible();
+  await expect(
+    page.getByText(/13,009-step total was not produced/),
+  ).toBeVisible();
+  await expect(page.getByText("Loading source coverage…")).toHaveAttribute(
+    "aria-busy",
+    "true",
+  );
+  for (const state of [
+    "No synthetic records yet",
+    "partial day",
+    "stale",
+    "Body Battery unavailable",
+    "No total · source conflict",
+  ]) {
+    await expect(page.getByText(new RegExp(state))).toBeVisible();
+  }
+  expect(
+    await page.evaluate(() => document.body.scrollWidth <= window.innerWidth),
+  ).toBe(true);
+});
+
 const exactViewports = [
   { width: 360, height: 800 },
   { width: 390, height: 844 },
@@ -144,6 +172,17 @@ test("@visual exact viewport matrix keeps core flows usable", async ({
       page.getByRole("heading", { name: "Deterministic by default" }),
     ).toBeVisible();
     await expect(page.getByText("Consent state: not granted.")).toBeVisible();
+    expect(
+      await page.evaluate(() => document.body.scrollWidth <= window.innerWidth),
+    ).toBe(true);
+
+    await page.goto("/data-sources");
+    await expect(
+      page.getByRole("heading", { name: "Source arbitration diagnostic" }),
+    ).toBeVisible();
+    await expect(
+      page.getByText(/13,009-step total was not produced/),
+    ).toBeVisible();
     expect(
       await page.evaluate(() => document.body.scrollWidth <= window.innerWidth),
     ).toBe(true);

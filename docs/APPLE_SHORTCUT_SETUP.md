@@ -3,7 +3,7 @@
 The Shortcut is an owner-built ingestion client; it is not bundled as an opaque binary.
 
 1. Deploy the private Supabase project and `ingest-health` Edge Function first.
-2. From an authenticated server-only bootstrap flow, register one device and issue a long random token. Store only its SHA-256 hash in `private.ingestion_credentials`.
+2. From an authenticated server-only bootstrap flow, register one device and issue a long random token. The service stores only its HMAC-SHA-256 digest using the per-project pepper encrypted in Supabase Vault.
 3. In Shortcuts, add a private text value for the HTTPS ingestion URL and token. Do not place them in screenshots, shared iCloud links, notes, or source control.
 4. Use “Find Health Samples” only for the allowlisted types in `APPLE_HEALTH_MAPPING.md`, within a small bounded window.
 5. Convert samples to the versioned JSON envelope, set a random request ID and stable idempotency key, then send one HTTPS POST with `Authorization: Bearer …` and `Content-Type: application/json`.

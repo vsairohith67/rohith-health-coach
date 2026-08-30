@@ -17,6 +17,9 @@ export default defineConfig({
         "packages/health-query-service/src/index.ts",
       ),
       "@rohith-health/ai-safety": resolve("packages/ai-safety/src/index.ts"),
+      "@rohith-health/source-arbitration": resolve(
+        "packages/source-arbitration/src/index.ts",
+      ),
       "@rohith-health/ai-gateway": resolve(
         "services/health-ai-gateway/src/index.ts",
       ),

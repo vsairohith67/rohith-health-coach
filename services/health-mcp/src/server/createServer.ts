@@ -51,7 +51,7 @@ export function createHealthMcpServer(
     () => new Date("2026-08-28T12:00:00.000Z"),
   );
   const server = new McpServer(
-    { name: "rohith-health-read-only", version: "1.0.0-rc4" },
+    { name: "rohith-health-read-only", version: "1.0.0-rc5" },
     {
       instructions:
         "Read-only aggregate health tools. Check freshness, use the smallest range, preserve missing values, cite evidence, avoid diagnosis and medication advice, and return at most three actions.",

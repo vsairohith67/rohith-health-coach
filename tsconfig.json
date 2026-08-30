@@ -26,6 +26,9 @@
       ],
       "@rohith-health/query": ["packages/health-query-service/src/index.ts"],
       "@rohith-health/ai-safety": ["packages/ai-safety/src/index.ts"],
+      "@rohith-health/source-arbitration": [
+        "packages/source-arbitration/src/index.ts"
+      ],
       "@rohith-health/ai-gateway": ["services/health-ai-gateway/src/index.ts"]
     }
   },
