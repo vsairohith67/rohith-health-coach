@@ -2,6 +2,14 @@
 
 Reviewed 30 August 2026 unless noted. Product code does not scrape these sources at runtime.
 
+- [Supabase general Auth configuration](https://supabase.com/docs/guides/auth/general-configuration) — disabling public signup while retaining existing-user sign-in.
+- [Supabase passwordless email](https://supabase.com/docs/guides/auth/auth-email-passwordless) and [JavaScript `signInWithOtp`](https://supabase.com/docs/reference/javascript/auth-signinwithotp) — automatic unknown-user creation and mandatory `shouldCreateUser: false`.
+- [Supabase Auth redirect URLs](https://supabase.com/docs/guides/auth/redirect-urls) — Site URL, exact Production callback guidance, and wildcard behavior.
+- [Supabase user invitations](https://supabase.com/docs/guides/auth/users) and [email templates](https://supabase.com/docs/guides/auth/auth-email-templates) — administrator invitation, confirmation, recovery, and token-hash routes.
+- [Supabase passwordless email expiry](https://supabase.com/docs/guides/auth/auth-email-passwordless) and [Auth rate limits](https://supabase.com/docs/guides/auth/rate-limits) — one-hour default email-token lifetime, repeat-request window, and built-in email limits.
+- [Supabase user sessions](https://supabase.com/docs/guides/auth/sessions) — JWT lifetime, refresh rotation/reuse, session termination, Free-plan limits, and HttpOnly tradeoffs.
+- [Supabase Next.js SSR client](https://supabase.com/docs/guides/auth/server-side/creating-a-client?framework=nextjs), [advanced SSR guide](https://supabase.com/docs/guides/auth/server-side/advanced-guide), and [`getClaims`](https://supabase.com/docs/reference/javascript/auth-getclaims) — Proxy cookie refresh, verified server identity, and why `getSession` alone is insufficient.
+- [Supabase Auth Management API](https://supabase.com/docs/reference/api/v1-update-auth-service-config) — supported project Auth configuration mutation and required owner authorization.
 - [Supabase changelog](https://supabase.com/changelog) — current Data API and platform breaking changes.
 - [Supabase Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security) — RLS ownership patterns.
 - [Supabase database functions](https://supabase.com/docs/guides/database/functions) — function security/search path.

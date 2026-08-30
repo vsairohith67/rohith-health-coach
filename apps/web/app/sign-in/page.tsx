@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { SignInForm } from "../../components/sign-in-form";
+import { isDemoMode } from "../../lib/runtime-mode";
 
-export default function SignInPage() {
+export default async function SignInPage({
+  searchParams,
+}: Readonly<{ searchParams: Promise<{ status?: string }> }>) {
+  const { status } = await searchParams;
+  const demoMode = isDemoMode();
   return (
     <main className="auth-page">
       <section>
@@ -19,18 +25,13 @@ export default function SignInPage() {
           Health information is never rendered before an authenticated session.
           Public sign-up is disabled by default.
         </p>
-        <form>
-          <label htmlFor="email">Email address</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-          />
-          <button type="submit">Send secure sign-in link</button>
-        </form>
-        <Link href="/today">Open isolated Demo Mode</Link>
+        {status === "invalid" ? (
+          <p className="auth-message" role="alert">
+            Sign-in could not be completed. Request a new link.
+          </p>
+        ) : null}
+        <SignInForm />
+        {demoMode ? <Link href="/today">Open isolated Demo Mode</Link> : null}
         <small>Informational health analytics · not medical advice</small>
       </section>
     </main>

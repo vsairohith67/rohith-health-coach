@@ -29,7 +29,7 @@ const httpServer = createServer(async (request, response) => {
       JSON.stringify({
         ok: enabled,
         service: "rohith-health-mcp",
-        version: "1.0.0-rc5",
+        version: "1.0.0-rc6",
       }),
     );
     return;

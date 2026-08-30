@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0-rc6 — 2026-08-30
+
+- Added real passwordless private login with `shouldCreateUser: false`, generic anti-enumeration feedback, PKCE callback exchange, token-hash confirmation/recovery, verified server identity, and global/local sign-out handling.
+- Added a fail-closed Production route/API boundary, deterministic private empty state, no-store responses, and explicit Secure/HttpOnly/SameSite cookie policy.
+- Passed 282 unit/integration assertions, 55 database checks, five FIT tests, 222 evaluation-harness assertions, 16 Playwright cases, 11 callback attacks, and a compiled ten-route unauthenticated Production-shell matrix.
+- Kept the hosted Auth negative matrix, Vercel Production, owner onboarding, and 24-case hosted E2E stopped because live Supabase readback remains `disable_signup=false`.
+
 ## 1.0.0-rc5 — 2026-08-30
 
 - Merged the green RC4 integration PR and verified its exact hosted CI result on `main`.

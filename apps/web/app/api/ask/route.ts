@@ -1,7 +1,28 @@
 import { DEMO_PROFILE } from "@rohith-health/domain";
 import { generateCoachFindings } from "@rohith-health/coach";
+import { getVerifiedUser } from "../../../lib/auth/server";
+import { isDemoMode } from "../../../lib/runtime-mode";
 
 export async function POST(request: Request) {
+  if (!isDemoMode()) {
+    const user = await getVerifiedUser().catch(() => null);
+    if (!user) {
+      return Response.json(
+        { error: "AUTHENTICATION_REQUIRED" },
+        {
+          status: 401,
+          headers: { "cache-control": "private, no-store, max-age=0" },
+        },
+      );
+    }
+    return Response.json(
+      { error: "FEATURE_DISABLED" },
+      {
+        status: 403,
+        headers: { "cache-control": "private, no-store, max-age=0" },
+      },
+    );
+  }
   const length = Number(request.headers.get("content-length") ?? "0");
   if (length > 4_096)
     return Response.json({ error: "REQUEST_TOO_LARGE" }, { status: 413 });

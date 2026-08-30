@@ -1,7 +1,7 @@
-# Release notes — 1.0.0-rc5
+# Release notes — 1.0.0-rc6
 
-RC5 proves the core data boundary on hosted synthetic infrastructure. The free Mumbai Supabase project has five reproducible migrations, 179/179 hosted RLS checks, 21/21 private Storage checks, and 26/26 hosted ingestion checks. Temporary synthetic users, records, and objects were deleted after verification.
+RC6 implements the private Auth application boundary: passwordless login cannot auto-create unknown users, login feedback does not enumerate accounts, callback and confirmation routes validate credentials and reject open redirects, server authorization uses verified claims/current users, and Production cookies are Secure, HttpOnly, SameSite=Lax, and path-scoped.
 
-Source arbitration now prefers valid Garmin coverage, uses iPhone only as a proven fallback, refuses ambiguous totals, and deduplicates the same Garmin workout received through Apple Health and FIT. The `4,861` Garmin plus `8,148` iPhone overlap case returns `4,861`, never `13,009`. Apple Shortcut provenance limitations are explicit, so Steps remain excluded from a real pilot until source identity is proven on-device.
+The compiled Production shell denies nine private pages and raw APIs when unauthenticated, never renders Demo fixtures, never caches private documents/APIs, and keeps AI, MCP, phone automation, Garmin cloud, and real data disabled. The source gate passed 282 unit/integration assertions, 55 database tests, five FIT tests, 222 evaluation assertions, and 16 Playwright cases.
 
-The synthetic Vercel Preview passed 28 route/viewport checks, three accessibility scans, PWA, dark-mode, reduced-motion, and conflict-state QA. Production and the full hosted E2E flow remain blocked because Supabase public email signup is still enabled. No real data, phone automation, AI, MCP, ChatGPT, Codex, Garmin cloud API, or GA promotion is enabled.
+Hosted Supabase still reports `disable_signup=false`. The supported Dashboard/Management API mutation was unavailable without owner authentication, so the direct signup probes, exact Auth URL readback, owner invitation, Vercel Production deployment, and 24-case Production E2E remain correctly stopped. RC6 is therefore a sanitized partial security release, not real-data clearance.

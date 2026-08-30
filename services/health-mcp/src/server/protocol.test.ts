@@ -28,7 +28,7 @@ describe("MCP protocol integration", () => {
 
     expect(client.getServerVersion()).toMatchObject({
       name: "rohith-health-read-only",
-      version: "1.0.0-rc5",
+      version: "1.0.0-rc6",
     });
     const listed = await client.listTools();
     expect(listed.tools).toHaveLength(17);

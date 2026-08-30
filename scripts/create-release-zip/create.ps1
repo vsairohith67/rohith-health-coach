@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
-  [ValidateSet("rc1", "rc2", "rc3", "rc4", "rc5")]
-  [string]$Version = "rc5",
+  [ValidateSet("rc1", "rc2", "rc3", "rc4", "rc5", "rc6")]
+  [string]$Version = "rc6",
   [string]$OutputDirectory = "release"
 )
 
@@ -24,7 +24,7 @@ try {
     $relative = [System.IO.Path]::GetRelativePath($repoRoot, $_.FullName)
     $segments = $relative -split '[\\/]'
     if ($segments | Where-Object { $_ -in $excludedDirectories }) { return }
-    if ($_.Name -in @("release-manifest.json", "release-checksums.txt", "final-release-manifest.json", "final-release-checksums.txt", "rc5-release-manifest.json", "rc5-release-checksums.txt", "RC5_RELEASE_REPORT.md")) { return }
+    if ($_.Name -in @("release-manifest.json", "release-checksums.txt", "final-release-manifest.json", "final-release-checksums.txt", "rc5-release-manifest.json", "rc5-release-checksums.txt", "RC5_RELEASE_REPORT.md", "rc6-release-manifest.json", "rc6-release-checksums.txt", "RC6_RELEASE_REPORT.md")) { return }
     if ($_.Extension -ieq ".zip") { return }
     if ($_.Name -match '^\.env(?!\.example$)') { return }
     if ($_.Extension -in @(".fit", ".gguf", ".key", ".log", ".p12", ".pfx", ".pem", ".pyc")) { return }

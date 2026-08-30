@@ -207,6 +207,19 @@ a:hover {
   font-size: 0.83rem;
   font-weight: 650;
 }
+.sign-out-form {
+  margin: 8px 14px 0;
+}
+.sign-out-form button {
+  width: 100%;
+  min-height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 650;
+}
 .mobile-header,
 .mobile-nav {
   display: none;
@@ -1033,6 +1046,16 @@ td {
   border-radius: 7px;
   background: var(--teal);
   color: white;
+}
+.auth-page button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+.auth-message {
+  min-height: 1.5em;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .auth-page small {
   display: block;
