@@ -4,7 +4,7 @@ Inventory captured 2026-08-30. Identifiers are non-secret.
 
 | Platform      | Observed account/resource                                 | Selected role                                            | State                                            |
 | ------------- | --------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------ |
-| GitHub        | Personal `vsairohith67`; no matching repository initially | Private source and CI                                    | Prepared for safe private creation               |
+| GitHub        | Personal `vsairohith67`; private `rohith-health-coach`    | Private source and CI                                    | Created; baseline main pushed, final CI pending  |
 | Supabase      | `Supabase test Organisation`; zero projects               | Auth, Postgres, private Storage, ingestion Edge Function | Blocked pending project/cost/region confirmation |
 | Vercel        | Personal Hobby; unrelated `body-composition-journey` only | Preferred PWA host                                       | Not created or deployed                          |
 | Netlify       | Personal Free owner team; zero sites                      | Alternative PWA host                                     | Intentionally unused                             |

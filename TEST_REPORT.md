@@ -14,6 +14,6 @@ Final local evidence:
 | Ruff                   | Passed                                                                                         |
 | MCP                    | Official SDK initialize/list/call, stdio spawn, loopback metadata/401, OAuth primitives passed |
 | Dependency audit       | pnpm reported no known vulnerabilities                                                         |
-| Secret scan            | 205 source text files passed before archive creation                                           |
+| Secret scan            | 273 source/metadata text files passed at final publication                                     |
 
 The responsive matrix exercised 360×800, 390×844, 430×932, 768×1024, 1024×768, 1280×800, and 1440×900 across Today, Ask, and AI settings. Playwright’s development server printed expected React CSP `eval()` diagnostics; the production build uses no `unsafe-eval`. Hosted, physical-device, screen-reader, official-decoder corpus, real OAuth/ChatGPT/Codex, and model-specific tests have not run.

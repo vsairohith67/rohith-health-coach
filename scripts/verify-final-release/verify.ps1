@@ -29,7 +29,7 @@ foreach ($name in $expected) {
       $_.Extension -in @(".fit", ".gguf", ".key", ".p12", ".pfx", ".pem", ".pyc", ".log") -or
       $_.FullName -match '[\\/](node_modules|\.next|\.venv|\.git|test-results|playwright-report)[\\/]'
     }
-    if ($forbidden) { throw "Forbidden release content in $name: $($forbidden.FullName -join ', ')" }
+    if ($forbidden) { throw "Forbidden release content in ${name}: $($forbidden.FullName -join ', ')" }
     node (Join-Path $repoRoot "scripts\verify-no-secrets.mjs") $extract
     if ($LASTEXITCODE -ne 0) { throw "Secret scan failed for $name" }
     Write-Output "PASS $name files=$($files.Count) sha256=$((Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant())"

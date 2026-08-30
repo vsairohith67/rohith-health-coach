@@ -1,7 +1,7 @@
 # Final known limitations
 
 - Hosted Supabase/Auth/RLS/Storage/ingestion and cloud advisors are unverified.
-- No matching Vercel/Netlify project, GitHub repository, or FastAPI Cloud app is linked.
+- No matching Vercel/Netlify project or FastAPI Cloud app is linked; the private GitHub repository is source/CI only.
 - No official Garmin FIT decoder or adversarial real FIT corpus is installed.
 - No iPhone Shortcut, automation, physical-device, or real-data pilot has run.
 - No local model endpoint/model benchmark; no external provider implementation/consent.

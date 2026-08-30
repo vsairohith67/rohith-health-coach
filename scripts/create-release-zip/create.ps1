@@ -24,6 +24,7 @@ try {
     $relative = [System.IO.Path]::GetRelativePath($repoRoot, $_.FullName)
     $segments = $relative -split '[\\/]'
     if ($segments | Where-Object { $_ -in $excludedDirectories }) { return }
+    if ($_.Name -in @("release-manifest.json", "release-checksums.txt", "final-release-manifest.json", "final-release-checksums.txt")) { return }
     if ($_.Extension -ieq ".zip") { return }
     if ($_.Name -match '^\.env(?!\.example$)') { return }
     if ($_.Extension -in @(".fit", ".gguf", ".log", ".pyc")) { return }
@@ -40,7 +41,12 @@ try {
     production_integrations_enabled = $false
     generated_at = [DateTimeOffset]::UtcNow.ToString("o")
   }
-  $phase | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $payload "release-phase.json") -Encoding utf8NoBOM
+  $phaseJson = (($phase | ConvertTo-Json) -replace "`r`n", "`n") + "`n"
+  [System.IO.File]::WriteAllText(
+    (Join-Path $payload "release-phase.json"),
+    $phaseJson,
+    [System.Text.UTF8Encoding]::new($false)
+  )
   Compress-Archive -LiteralPath $payload -DestinationPath $archive -CompressionLevel Optimal
   Write-Output $archive
 } finally {

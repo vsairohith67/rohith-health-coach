@@ -11,3 +11,5 @@ Final local run on Windows/Node 22 toolchain:
 - `docker build --pull=false -t rohith-health-fit-parser:rc4 services/fit-parser`: PASS with digest-pinned Python 3.12.11 base and frozen uv install.
 
 The FIT container was also run on loopback: `/health` returned `ok`, authenticated `/version` reported RC4/decoder not configured, and `id` showed non-root UID/GID 999. No production deployment is implied.
+
+Release reproducibility: the exact `rohith-health-coach-v1.0.0-rc4.zip` was extracted to a clean temporary directory, installed with the frozen lock (455 packages), and passed format, lint, typecheck, 254 tests, the 26-page production build, and extracted secret scanning.
