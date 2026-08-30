@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "captured_at": "2026-08-30T00:00:00+05:30",
+  "project": "Rohith Health Coach",
+  "version": "1.0.0-rc4",
+  "data_classification": "synthetic_only",
+  "github": {
+    "account": "vsairohith67",
+    "repository": null,
+    "visibility": null,
+    "default_branch": null,
+    "exact_head": null,
+    "ci": "prepared"
+  },
+  "supabase": {
+    "organization": "Supabase test Organisation",
+    "project": null,
+    "status": "blocked_pending_creation_confirmation",
+    "local_pgtap": "40_of_40_passed",
+    "hosted_security": "not_run"
+  },
+  "vercel": {
+    "team": "personal_hobby",
+    "project": null,
+    "preview": "not_deployed",
+    "production": "not_deployed"
+  },
+  "netlify": {
+    "team": "personal_free",
+    "site": null,
+    "status": "alternative_not_used"
+  },
+  "fit_worker": {
+    "local_container": "passed",
+    "hosted_service": null,
+    "status": "not_deployed"
+  },
+  "notion": {
+    "workspace": "personal",
+    "status_page": null,
+    "status": "pending_terminal_sync"
+  },
+  "ai": {
+    "deterministic": "enabled",
+    "local": "disabled",
+    "external": "disabled",
+    "real_health_tracing": false
+  },
+  "real_data_enabled": false,
+  "ga_eligible": false
+}

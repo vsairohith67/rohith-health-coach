@@ -1,0 +1,12 @@
+{
+  "name": "@rohith-health/mcp",
+  "version": "1.0.0-rc4",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts",
+  "scripts": {
+    "stdio": "tsx src/transports/stdio.ts",
+    "http": "tsx src/transports/http.ts",
+    "test": "vitest run"
+  }
+}

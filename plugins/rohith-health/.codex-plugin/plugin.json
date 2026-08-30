@@ -1,0 +1,26 @@
+{
+  "name": "rohith-health",
+  "version": "1.0.0-rc4",
+  "description": "Private, read-only access to bounded Rohith Health Coach aggregates.",
+  "author": {
+    "name": "Rohith Health Coach"
+  },
+  "license": "LicenseRef-Proprietary",
+  "keywords": ["health", "wellbeing", "private", "read-only"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Rohith Health",
+    "shortDescription": "Review private aggregate health trends safely.",
+    "longDescription": "Connects Codex to the private Rohith Health Coach read-only MCP for aggregate sleep, activity, heart, wellbeing, freshness, and evidence.",
+    "developerName": "Rohith Health Coach",
+    "category": "Health & Fitness",
+    "capabilities": ["Read-only MCP", "Evidence-backed summaries"],
+    "brandColor": "#0F766E",
+    "defaultPrompt": [
+      "Summarize my supported health aggregates for today.",
+      "Compare my sleep trend with my recent baseline.",
+      "Check data freshness before summarizing activity."
+    ]
+  },
+  "mcpServers": "./.mcp.json"
+}

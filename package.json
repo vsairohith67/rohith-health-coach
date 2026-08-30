@@ -1,0 +1,60 @@
+{
+  "name": "rohith-health-coach",
+  "version": "1.0.0-rc4",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.17.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @rohith-health/web dev",
+    "build": "pnpm --filter @rohith-health/web build",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:evals": "vitest run packages/agent-evals && tsx scripts/write-eval-report.ts",
+    "test:mcp": "vitest run services/health-mcp",
+    "test:security": "vitest run packages/ai-safety packages/health-query-service",
+    "test:e2e": "playwright test",
+    "test:a11y": "playwright test --grep @a11y",
+    "test:visual": "playwright test --grep @visual",
+    "demo:generate": "tsx scripts/generate-demo-data/index.ts",
+    "verify:secrets": "node scripts/verify-no-secrets.mjs",
+    "verify:release": "pwsh -NoProfile -File scripts/verify-final-release/verify.ps1",
+    "release:rc4": "pwsh -NoProfile -File scripts/create-final-release/create.ps1",
+    "release:all": "pwsh -NoProfile -Command \"foreach ($v in 'rc1','rc2','rc3') { & ./scripts/create-release-zip/create.ps1 -Version $v }; & ./scripts/create-final-release/create.ps1\"",
+    "disable:all-ai": "pwsh -NoProfile -File scripts/disable-all-ai/disable.ps1",
+    "db:test": "pnpm dlx supabase@2.116.0 test db",
+    "db:lint": "pnpm dlx supabase@2.116.0 db lint --local",
+    "fit:test": "uv run --directory services/fit-parser pytest -q",
+    "fit:lint": "uv run --directory services/fit-parser ruff check ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.30.0",
+    "@supabase/ssr": "0.12.5",
+    "@supabase/supabase-js": "2.112.4",
+    "date-fns": "4.4.0",
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.1",
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1",
+    "@types/node": "26.4.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
+    "eslint": "9.39.1",
+    "eslint-config-next": "16.3.3",
+    "prettier": "3.6.2",
+    "tsx": "4.20.5",
+    "typescript": "6.0.3",
+    "vitest": "4.1.11"
+  }
+}

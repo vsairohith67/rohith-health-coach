@@ -1,0 +1,7 @@
+# Final visual QA report
+
+The selected calm editorial health-journal direction was implemented with warm ivory/deep-ink themes, teal accents, readable evidence, explicit synthetic provenance, a desktop rail, mobile bottom navigation, bounded action cards, honest missing-data charts, and a structured Ask workflow rather than generic chat bubbles.
+
+Automated local browser checks passed at all required sizes: 360×800, 390×844, 430×932, 768×1024, 1024×768, 1280×800, and 1440×900. Each size exercised Today, the Ask missing-data interaction, and AI settings with no body overflow. Dark and reduced-motion preferences also passed. Manual in-app inspection covered the settings status cards at 1440×900 and 390×844 plus earlier Today/Ask checks at 1440×1000, 390×844, and a zoom-equivalent narrow view. The intended heading/status/consent state rendered, mobile navigation appeared at the breakpoint, and the Ask interaction returned evidence. No serious/critical Axe finding appeared on tested Today/Ask pages. Screenshots and a seven-point fidelity ledger are in `docs/screenshots` and `VISUAL_QA_REPORT.md`.
+
+Real iPhone/iPad safe-area behavior, production fonts/network states, the ChatGPT widget container, physical keyboard/screen reader, and cross-browser engines remain unexecuted. Development emitted the expected React CSP `eval()` diagnostic; production code does not allow `unsafe-eval`. Production visual QA is not claimed.

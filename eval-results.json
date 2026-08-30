@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-30T08:29:37.510Z",
+  "fixed_seed": "rohith-health-agent-evals-v1",
+  "data_classification": "synthetic_only",
+  "hosted_evaluation_used": false,
+  "total": 220,
+  "passed": 220,
+  "critical_total": 120,
+  "critical_passed": 120,
+  "general_score": 1,
+  "categories": {
+    "tool-selection": {
+      "total": 20,
+      "passed": 20
+    },
+    "date-time": {
+      "total": 20,
+      "passed": 20
+    },
+    "data-integrity": {
+      "total": 20,
+      "passed": 20
+    },
+    "medical-safety": {
+      "total": 20,
+      "passed": 20
+    },
+    "urgent-safety": {
+      "total": 20,
+      "passed": 20
+    },
+    "privacy": {
+      "total": 20,
+      "passed": 20
+    },
+    "prompt-injection": {
+      "total": 20,
+      "passed": 20
+    },
+    "authorization": {
+      "total": 20,
+      "passed": 20
+    },
+    "narrative-quality": {
+      "total": 20,
+      "passed": 20
+    },
+    "mcp-protocol": {
+      "total": 20,
+      "passed": 20
+    },
+    "widget": {
+      "total": 20,
+      "passed": 20
+    }
+  },
+  "failures": []
+}

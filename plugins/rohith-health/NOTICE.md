@@ -1,0 +1,1 @@
+The plugin contains original configuration, documentation, schemas, and a launcher for Rohith Health Coach. It does not include Garmin SDK files, health records, credentials, third-party model weights, or third-party source code.

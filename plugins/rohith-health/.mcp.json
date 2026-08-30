@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "rohith-health": {
+      "cwd": ".",
+      "command": "node",
+      "args": ["./scripts/run-mcp.mjs"]
+    }
+  }
+}

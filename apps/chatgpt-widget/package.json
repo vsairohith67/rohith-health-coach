@@ -1,0 +1,6 @@
+{
+  "name": "@rohith-health/chatgpt-widget",
+  "version": "1.0.0-rc4",
+  "private": true,
+  "type": "module"
+}

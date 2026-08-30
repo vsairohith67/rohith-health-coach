@@ -1,0 +1,6 @@
+{
+  "name": "@rohith-health/agent-evals",
+  "version": "1.0.0-rc4",
+  "private": true,
+  "type": "module"
+}

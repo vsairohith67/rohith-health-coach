@@ -1,0 +1,9 @@
+[build]
+  command = "pnpm build"
+  publish = "apps/web/.next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  PNPM_VERSION = "10.17.1"
+
+# Alternative only. Do not activate this site while Vercel is the selected host.

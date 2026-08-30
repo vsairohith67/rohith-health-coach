@@ -1,0 +1,14 @@
+FROM python:3.12.11-slim@sha256:47ae396f09c1303b8653019811a8498470603d7ffefc29cb07c88f1f8cb3d19f
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PATH="/app/.venv/bin:$PATH"
+
+WORKDIR /app
+RUN groupadd --system fit && useradd --system --gid fit --home /nonexistent fit
+COPY pyproject.toml uv.lock ./
+RUN pip install --no-cache-dir uv==0.8.13 && uv sync --frozen --no-dev
+COPY app ./app
+USER fit
+EXPOSE 8080
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--no-access-log"]

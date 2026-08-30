@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rohith-health.invalid/schemas/result-envelope-v1.json",
+  "title": "Rohith Health Coach aggregate result",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "requestId",
+    "dateRange",
+    "freshness",
+    "completeness",
+    "baseline",
+    "evidence",
+    "limitations"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "requestId": { "type": "string", "format": "uuid" },
+    "dateRange": {
+      "type": "object",
+      "required": ["start", "end"],
+      "properties": {
+        "start": { "type": "string", "format": "date" },
+        "end": { "type": "string", "format": "date" }
+      },
+      "additionalProperties": false
+    },
+    "freshness": { "type": "object" },
+    "completeness": { "type": "object" },
+    "baseline": { "type": "object" },
+    "evidence": { "type": "array", "maxItems": 366 },
+    "limitations": { "type": "array", "maxItems": 20 }
+  },
+  "additionalProperties": true
+}

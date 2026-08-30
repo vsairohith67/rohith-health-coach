@@ -1,0 +1,7 @@
+{
+  "name": "@rohith-health/coach",
+  "version": "1.0.0-rc4",
+  "private": true,
+  "type": "module",
+  "exports": "./src/index.ts"
+}

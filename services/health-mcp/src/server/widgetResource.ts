@@ -1,0 +1,7 @@
+export const WIDGET_URI = "ui://rohith-health/summary-v1.html";
+
+export const WIDGET_HTML = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{font:15px/1.5 system-ui,sans-serif;margin:0;padding:20px;color:#17242d;background:#fffaf1}h1{font:700 28px Georgia,serif;margin:0 0 12px}.status{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #d9d2c6}.status div{padding:12px}.muted{color:#5f6d72}@media(prefers-color-scheme:dark){body{color:#f5efe4;background:#17201f}.status{border-color:#43504c}}@media(max-width:420px){.status{grid-template-columns:1fr}}</style></head>
+<body><main><p class="muted">Rohith Health Coach</p><h1 id="title">Aggregate summary</h1><div class="status" id="status"></div><p id="limits"></p></main>
+<script type="module">const value=window.openai?.toolOutput;const root=document.getElementById('status');if(!value||value.schemaVersion!=='1.0'){root.textContent='Structured result unavailable.'}else{for(const [label,text] of [['Freshness',value.freshness?.status],['Completeness',value.completeness?.percent+'%'],['Baseline',value.baseline?.status]]){const item=document.createElement('div');const small=document.createElement('small');small.textContent=label;const strong=document.createElement('strong');strong.textContent=String(text??'Unavailable');item.append(small,document.createElement('br'),strong);root.append(item)}document.getElementById('limits').textContent=(value.limitations??[]).join(' ')}</script></body></html>`;

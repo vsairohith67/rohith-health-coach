@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@rohith-health/domain": ["packages/health-domain/src/index.ts"],
+      "@rohith-health/contracts": ["packages/health-contracts/src/index.ts"],
+      "@rohith-health/analytics": ["packages/analytics/src/index.ts"],
+      "@rohith-health/coach": ["packages/coach-engine/src/index.ts"],
+      "@rohith-health/agent-contracts": [
+        "packages/health-agent-contracts/src/index.ts"
+      ],
+      "@rohith-health/query": ["packages/health-query-service/src/index.ts"],
+      "@rohith-health/ai-safety": ["packages/ai-safety/src/index.ts"],
+      "@rohith-health/ai-gateway": ["services/health-ai-gateway/src/index.ts"]
+    }
+  },
+  "include": [
+    "apps/**/*.ts",
+    "apps/**/*.tsx",
+    "packages/**/*.ts",
+    "services/health-ai-gateway/**/*.ts",
+    "services/health-mcp/**/*.ts",
+    "scripts/**/*.ts",
+    "vitest.config.ts",
+    "playwright.config.ts"
+  ],
+  "exclude": ["node_modules", ".next", "dist", "release", "services/fit-parser"]
+}

@@ -1,0 +1,34 @@
+{
+  "project": "Rohith Health Coach",
+  "plugin_version": "1.0.0-rc4",
+  "mcp": {
+    "stdio": "passed",
+    "http": "passed",
+    "inspector": "blocked"
+  },
+  "codex": {
+    "status": "ready_for_user"
+  },
+  "chatgpt": {
+    "status": "ready_for_user",
+    "connection_type": "secure_tunnel"
+  },
+  "widget": {
+    "status": "built"
+  },
+  "auth": {
+    "status": "prepared"
+  },
+  "real_data_enabled": false,
+  "critical_evals_passed": true,
+  "ga_eligible": false,
+  "blockers": [
+    "mcp_inspector_not_run",
+    "codex_not_registered",
+    "chatgpt_capability_and_connection_not_verified",
+    "secure_tunnel_not_authorized",
+    "real_oauth_provider_not_configured",
+    "local_model_not_benchmarked",
+    "hosted_health_platform_absent"
+  ]
+}
