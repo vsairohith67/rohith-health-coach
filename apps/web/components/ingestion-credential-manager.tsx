@@ -56,6 +56,16 @@ function OneTimeCredential({
       <strong>
         Do not paste the token into Git, notes, email, logs, or this project.
       </strong>
+      <button
+        type="button"
+        onClick={() => window.location.replace("/settings/ingestion")}
+      >
+        I stored it — clear this credential
+      </button>
+      <p>
+        This reload removes the one-time value from this page and replaces the
+        current history entry, so the Back button cannot reveal it again.
+      </p>
     </section>
   );
 }

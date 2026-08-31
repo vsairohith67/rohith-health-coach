@@ -171,6 +171,7 @@ test("@visual exact viewport matrix keeps core flows usable", async ({
     }
 
     await page.goto("/ask");
+    await page.waitForLoadState("networkidle");
     await page
       .getByRole("button", { name: "Which days have missing data?" })
       .click();
