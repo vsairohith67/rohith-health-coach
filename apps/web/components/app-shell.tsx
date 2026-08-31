@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Icon, type IconName } from "./icons";
 
 type NavigationItem = {
@@ -77,21 +77,81 @@ export function AppShell({
   const pathname = usePathname();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileNavigationOpen, setMobileNavigationOpen] = useState(false);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileDrawerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (!mobileNavigationOpen) return;
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMobileNavigationOpen(false);
+    const drawer = mobileDrawerRef.current;
+    const opener = mobileMenuButtonRef.current;
+    if (!drawer) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const focusableSelector = [
+      "a[href]",
+      "button:not([disabled]):not([tabindex='-1'])",
+      "input:not([disabled])",
+      "select:not([disabled])",
+      "textarea:not([disabled])",
+      "[tabindex]:not([tabindex='-1'])",
+    ].join(",");
+    const getFocusableElements = () =>
+      Array.from(
+        drawer.querySelectorAll<HTMLElement>(focusableSelector),
+      ).filter(
+        (element) => !element.hidden && element.getClientRects().length > 0,
+      );
+
+    const containFocus = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setMobileNavigationOpen(false);
+        return;
+      }
+      if (event.key !== "Tab") return;
+
+      const focusable = getFocusableElements();
+      if (!focusable.length) {
+        event.preventDefault();
+        drawer.focus();
+        return;
+      }
+      const first = focusable[0]!;
+      const last = focusable.at(-1)!;
+      const active = document.activeElement;
+
+      if (event.shiftKey && (active === first || !drawer.contains(active))) {
+        event.preventDefault();
+        last.focus();
+      } else if (
+        !event.shiftKey &&
+        (active === last || !drawer.contains(active))
+      ) {
+        event.preventDefault();
+        first.focus();
+      }
     };
-    window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
+
+    getFocusableElements()[0]?.focus();
+    document.addEventListener("keydown", containFocus);
+    return () => {
+      document.removeEventListener("keydown", containFocus);
+      document.body.style.overflow = previousOverflow;
+      opener?.focus();
+    };
   }, [mobileNavigationOpen]);
 
   return (
     <div
       className={sidebarCollapsed ? "app-shell sidebar-collapsed" : "app-shell"}
     >
-      <aside className="sidebar" aria-label="Primary">
+      <aside
+        className="sidebar"
+        aria-label="Primary"
+        inert={mobileNavigationOpen ? true : undefined}
+      >
         <div className="sidebar-heading">
           <Link
             className="brand"
@@ -131,11 +191,15 @@ export function AppShell({
         <SidebarFooter privateMode={privateMode} />
       </aside>
 
-      <header className="mobile-header">
+      <header
+        className="mobile-header"
+        inert={mobileNavigationOpen ? true : undefined}
+      >
         <Link className="mobile-brand" href="/today">
           Rohith Health Coach
         </Link>
         <button
+          ref={mobileMenuButtonRef}
           className="icon-button"
           type="button"
           aria-label="Open all navigation"
@@ -153,14 +217,17 @@ export function AppShell({
             className="mobile-navigation-backdrop"
             type="button"
             aria-label="Close navigation"
+            tabIndex={-1}
             onClick={() => setMobileNavigationOpen(false)}
           />
           <aside
+            ref={mobileDrawerRef}
             id="mobile-navigation"
             className="mobile-navigation-drawer"
             role="dialog"
             aria-modal="true"
             aria-labelledby="mobile-navigation-title"
+            tabIndex={-1}
           >
             <div className="mobile-navigation-heading">
               <h2 id="mobile-navigation-title">All features</h2>
@@ -186,10 +253,18 @@ export function AppShell({
         </div>
       ) : null}
 
-      <main id="main-content" className="main-content">
+      <main
+        id="main-content"
+        className="main-content"
+        inert={mobileNavigationOpen ? true : undefined}
+      >
         {children}
       </main>
-      <nav className="mobile-nav" aria-label="Primary mobile navigation">
+      <nav
+        className="mobile-nav"
+        aria-label="Primary mobile navigation"
+        inert={mobileNavigationOpen ? true : undefined}
+      >
         {mobileNavigation.map((item) => (
           <NavItem
             key={item.href}

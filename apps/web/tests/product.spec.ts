@@ -128,9 +128,11 @@ test("complete desktop navigation scrolls and can collapse", async ({
     page.getByRole("button", { name: "Expand sidebar" }),
   ).toHaveAttribute("aria-expanded", "false");
   await expect(page.locator(".app-shell")).toHaveClass(/sidebar-collapsed/);
-  expect(
-    await sidebar.evaluate((element) => element.getBoundingClientRect().width),
-  ).toBe(84);
+  await expect
+    .poll(() =>
+      sidebar.evaluate((element) => element.getBoundingClientRect().width),
+    )
+    .toBe(84);
 
   await page.getByRole("button", { name: "Expand sidebar" }).click();
   await expect(page.locator(".app-shell")).not.toHaveClass(/sidebar-collapsed/);
@@ -141,10 +143,18 @@ test("mobile menu exposes every feature and closes safely", async ({
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/today");
-  await page.getByRole("button", { name: "Open all navigation" }).click();
+  const menuButton = page.getByRole("button", {
+    name: "Open all navigation",
+  });
+  await menuButton.click();
 
   const drawer = page.getByRole("dialog", { name: "All features" });
   await expect(drawer).toBeVisible();
+  const closeButton = drawer.getByRole("button", {
+    name: "Close navigation",
+  });
+  await expect(closeButton).toBeFocused();
+  await expect(page.getByRole("main")).toHaveAttribute("inert", "");
   const navigation = drawer.getByRole("navigation", { name: "All features" });
   for (const label of completeNavigation) {
     await expect(navigation.getByRole("link", { name: label })).toHaveCount(1);
@@ -159,6 +169,21 @@ test("mobile menu exposes every feature and closes safely", async ({
     ),
   ).toEqual([]);
 
+  await page.keyboard.press("Shift+Tab");
+  expect(
+    await drawer.evaluate((element) =>
+      element.contains(document.activeElement),
+    ),
+  ).toBe(true);
+  await page.keyboard.press("Tab");
+  await expect(closeButton).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(drawer).toBeHidden();
+  await expect(menuButton).toBeFocused();
+  await expect(page.getByRole("main")).not.toHaveAttribute("inert", "");
+
+  await menuButton.click();
+
   const ingestionLink = navigation.getByRole("link", {
     name: "iPhone ingestion",
   });
@@ -172,10 +197,6 @@ test("mobile menu exposes every feature and closes safely", async ({
   await expect(
     page.getByRole("heading", { name: "iPhone ingestion" }),
   ).toBeVisible();
-  await expect(drawer).toBeHidden();
-
-  await page.getByRole("button", { name: "Open all navigation" }).click();
-  await page.keyboard.press("Escape");
   await expect(drawer).toBeHidden();
 });
 

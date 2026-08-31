@@ -28,6 +28,7 @@ The iPhone ingestion page is now directly reachable from both desktop and mobile
 - Collapsed links retain explicit accessible names and visible tooltips.
 - Mobile keeps five primary quick links and adds a scrollable All features drawer.
 - The mobile drawer closes through its close control, backdrop, route selection, or the Escape key.
+- While the drawer is open, background regions are inert, Tab and Shift+Tab remain inside the dialog, and focus returns to the menu button on close.
 - Mobile Production mode includes the existing private sign-out control in the drawer.
 - The 1024-pixel banner and utility-row collision found during visual review was corrected.
 - Next.js 16 smooth-scroll intent is declared explicitly on the document element.
