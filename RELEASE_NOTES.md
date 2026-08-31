@@ -1,7 +1,7 @@
-# Release notes — 1.0.0-rc6
+# Release notes — 1.0.0-rc7
 
-RC6 implements the private Auth application boundary: passwordless login cannot auto-create unknown users, login feedback does not enumerate accounts, callback and confirmation routes validate credentials and reject open redirects, server authorization uses verified claims/current users, and Production cookies are Secure, HttpOnly, SameSite=Lax, and path-scoped.
+RC7 activates and validates the synthetic hosted private boundary. Supabase public signup is disabled, one redacted passwordless owner is confirmed, exact callbacks are allowlisted, and the Vercel Production shell is deployed from the Git-connected `main` branch with all optional integrations Off.
 
-The compiled Production shell denies nine private pages and raw APIs when unauthenticated, never renders Demo fixtures, never caches private documents/APIs, and keeps AI, MCP, phone automation, Garmin cloud, and real data disabled. The source gate passed 282 unit/integration assertions, 55 database tests, five FIT tests, 222 evaluation assertions, and 16 Playwright cases.
+Hosted synthetic evidence passed 24/24 end-to-end cases, 179/179 RLS checks, 21/21 private FIT Storage checks, 26/26 ingestion checks, and private export/signed-expiration/selective-deletion cleanup. The critical Garmin 4,861 plus iPhone 8,148 overlap selects 4,861, preserves the alternative, and never produces 13,009.
 
-Hosted Supabase still reports `disable_signup=false`. The supported Dashboard/Management API mutation was unavailable without owner authentication, so the direct signup probes, exact Auth URL readback, owner invitation, Vercel Production deployment, and 24-case Production E2E remain correctly stopped. RC6 is therefore a sanitized partial security release, not real-data clearance.
+RC7 is still **NOT SAFE FOR REAL DATA** because the GitHub repository remains temporarily Public under the user's explicit override. Steps remain excluded from any future first iPhone pilot because Apple Shortcut source identity must first be proven on the physical device. No real data, phone automation, AI, MCP, ChatGPT, Codex, Garmin cloud API, paid service, or GA promotion is enabled.

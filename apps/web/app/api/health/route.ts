@@ -19,7 +19,7 @@ export async function GET() {
     {
       ok: true,
       service: "rohith-health-web",
-      version: "1.0.0-rc6",
+      version: "1.0.0-rc7",
       mode: "deterministic",
       syntheticOnly: demoMode,
       dataConnected: false,

@@ -1,8 +1,8 @@
 # Rohith Health Coach
 
-Rohith Health Coach is a private, evidence-led personal health PWA. The RC5 source release combines deterministic daily aggregation and coaching with hosted synthetic security evidence, fail-closed source arbitration, and optional AI/MCP surfaces that remain disabled.
+Rohith Health Coach is a private, evidence-led personal health PWA. The RC7 source release combines deterministic aggregation/coaching, passwordless private Auth, an authenticated hosted Production shell, hosted synthetic security evidence, fail-closed source arbitration, and optional AI/MCP surfaces that remain disabled.
 
-**Release status:** RC5 passed hosted synthetic RLS, Storage, ingestion, source-arbitration, and Vercel Preview checks. General availability and real-data readiness are **not** approved because Supabase public email signup remains enabled and the authenticated Production E2E flow has not run.
+**Release status:** RC7 passed hosted Auth, 24/24 synthetic E2E, RLS, private FIT/export Storage, ingestion, source arbitration, deletion, and Vercel Production checks. General availability and real-data readiness are **not** approved because the GitHub repository remains temporarily Public under the user's explicit override.
 
 ## What works now
 
@@ -57,4 +57,4 @@ All AI, MCP, ChatGPT, public signup, Garmin Cloud API, raw-health-to-AI, notes-t
 - `plugins/rohith-health` — private Codex plugin package.
 - `docs` — setup, safety, deployment, and owner handoff.
 
-Begin with [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/PRIVACY.md](docs/PRIVACY.md), and [FINAL_REAL_DATA_READINESS.md](FINAL_REAL_DATA_READINESS.md). Operational activation is intentionally separate from software clearance. See [RC5_HOSTED_AUTH_REPORT.md](RC5_HOSTED_AUTH_REPORT.md) for the single open safety gate.
+Begin with [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/PRIVACY.md](docs/PRIVACY.md), and [FINAL_REAL_DATA_READINESS.md](FINAL_REAL_DATA_READINESS.md). Operational activation is intentionally separate from software clearance. See [RC7_FINAL_SECURITY_REPORT.md](RC7_FINAL_SECURITY_REPORT.md) for the single open safety gate.
