@@ -1,14 +1,14 @@
 # Rohith Health Coach
 
-Rohith Health Coach is a private, evidence-led personal health PWA. The RC7 source release combines deterministic aggregation/coaching, passwordless private Auth, an authenticated hosted Production shell, hosted synthetic security evidence, fail-closed source arbitration, and optional AI/MCP surfaces that remain disabled.
+Rohith Health Coach is a private, evidence-led personal health PWA. The RC8.1 source combines deterministic aggregation/coaching, passwordless private Auth, an authenticated hosted Production shell, hosted synthetic security evidence, fail-closed source arbitration, and optional AI/MCP surfaces that remain disabled.
 
-**Release status:** RC7 passed hosted Auth, 24/24 synthetic E2E, RLS, private FIT/export Storage, ingestion, source arbitration, deletion, and Vercel Production checks. General availability and real-data readiness are **not** approved because the GitHub repository remains temporarily Public under the user's explicit override.
+**Release status:** RC8.1 contains the reviewed owner device-credential migration and UI. Current hosted and pilot status belongs in the RC8.1 deployment reports rather than this public source overview. The real-data pilot must not start until CI, hosted migration, hosted synthetic lifecycle, Production deployment, and owner handoff gates pass.
 
 ## What works now
 
 - A polished responsive Demo Mode built from a fixed 90-day synthetic profile.
 - Missing/partial/conflicting data semantics, robust baselines, bounded trends, and deterministic coaching.
-- Reproducible Supabase migrations, private Storage policies, HMAC-hashed ingestion credentials, 55 local database assertions, 179 hosted RLS checks, 21 hosted Storage checks, and 26 hosted ingestion checks.
+- Reproducible Supabase migrations, private Storage policies, HMAC-hashed ingestion credentials, 91 local database assertions, 179 hosted RLS checks, 21 hosted Storage checks, and 26 hosted ingestion checks.
 - Garmin-first source arbitration that preserves alternatives, rejects ambiguous totals, and deduplicates overlapping Apple Health/FIT workouts.
 - A fail-closed FastAPI FIT boundary. Validation works; full decode requires an owner-installed official Garmin FIT SDK adapter.
 - Eighteen query operations, seventeen read-only MCP tools, OAuth 2.1/PKCE primitives, and a constrained widget.
@@ -36,6 +36,7 @@ pnpm.cmd test:evals
 pnpm.cmd build
 pnpm.cmd test:e2e
 pnpm.cmd verify:secrets
+pnpm.cmd verify:private-data
 pnpm.cmd fit:lint
 pnpm.cmd fit:test
 ```
@@ -57,4 +58,4 @@ All AI, MCP, ChatGPT, public signup, Garmin Cloud API, raw-health-to-AI, notes-t
 - `plugins/rohith-health` — private Codex plugin package.
 - `docs` — setup, safety, deployment, and owner handoff.
 
-Begin with [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/PRIVACY.md](docs/PRIVACY.md), and [FINAL_REAL_DATA_READINESS.md](FINAL_REAL_DATA_READINESS.md). Operational activation is intentionally separate from software clearance. See [RC7_FINAL_SECURITY_REPORT.md](RC7_FINAL_SECURITY_REPORT.md) for the single open safety gate.
+Begin with [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/PRIVACY.md](docs/PRIVACY.md), and [FINAL_REAL_DATA_READINESS.md](FINAL_REAL_DATA_READINESS.md). Operational activation is intentionally separate from software clearance. See [RC8_DEVICE_TOKEN_READINESS_REPORT.md](RC8_DEVICE_TOKEN_READINESS_REPORT.md) for the current owner-credential deployment gate.

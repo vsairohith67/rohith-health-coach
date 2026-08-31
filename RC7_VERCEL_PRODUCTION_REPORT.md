@@ -19,7 +19,7 @@ No Supabase secret/service-role key, database password, ingestion pepper, device
 
 ## Deployment and verification
 
-The initial RC7 Git deployment was `READY` from `main` commit `9f8c61ae2e0be85a4dbf65df9e84d05b7e2c2f1f`. The final RC7 source commit and deployment ID are recorded in `rc7-deployment-state.json` after the terminal release merge.
+The final RC7 Git deployment is `dpl_5icf6hskaC1sSnpwj2Cv5kNNAjDD`, `READY`, from exact `main` merge `3c32bdfb773ea23601eccad8b2f4af4646b3ec4c`. The authenticated `/api/health` readback reports `1.0.0-rc7`, `dataConnected=false`, and `syntheticOnly=false` (the private zero-data Production profile).
 
 - Anonymous UI denial: 11/11.
 - Anonymous private API denial: 2/2.

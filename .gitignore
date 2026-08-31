@@ -14,6 +14,10 @@ coverage/
 .ruff_cache/
 supabase/.temp/
 supabase/.branches/
+private-evidence/
+.local-private/
+pilot-private/
+*.local-private.*
 __pycache__/
 *.pyc
 *.log

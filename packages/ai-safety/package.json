@@ -1,6 +1,6 @@
 {
   "name": "@rohith-health/ai-safety",
-  "version": "1.0.0-rc7",
+  "version": "1.0.0-rc8.1",
   "private": true,
   "type": "module",
   "exports": "./src/index.ts"

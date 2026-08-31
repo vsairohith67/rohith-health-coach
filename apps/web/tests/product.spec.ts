@@ -94,6 +94,23 @@ test("PWA manifest and offline shell assets are present", async ({
   expect(source).toContain("CLEAR_PRIVATE_CACHE");
 });
 
+test("Demo Mode cannot issue a Production ingestion credential", async ({
+  page,
+}) => {
+  await page.goto("/settings/ingestion");
+  await expect(
+    page.getByRole("heading", { name: "iPhone ingestion" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: "No Production credential can be created here",
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Create one-time credential" }),
+  ).toHaveCount(0);
+});
+
 test("RC5 synthetic source diagnostics fail closed", async ({ page }) => {
   await page.goto("/data-sources");
   await expect(
@@ -154,6 +171,7 @@ test("@visual exact viewport matrix keeps core flows usable", async ({
     }
 
     await page.goto("/ask");
+    await page.waitForLoadState("networkidle");
     await page
       .getByRole("button", { name: "Which days have missing data?" })
       .click();

@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.0.0-rc8.1 — 2026-08-31
+
+- Completed a line-by-line security review of the prepared device-credential migration, server actions, owner UI, private grants, rotation/revocation behavior, and synthetic tests.
+- Added an explicit full-navigation clear action for the one-time credential and replaced its history entry after the user stores it.
+- Stabilized the exact-viewport browser gate by waiting for hydration before the deterministic Ask interaction.
+- Passed the fresh 282-test application suite, 222 agent evaluations, 91 database assertions including 36 credential assertions, five FIT tests, 18 Playwright tests, Production build, schema lint, and local zero-sample ingestion cleanup.
+- Kept the real owner token, Apple Health data, phone automation, AI, MCP, Garmin authentication, Garmin cloud, and FIT cloud worker outside this source gate.
+
+## 1.0.0-rc8 — 2026-08-31
+
+- Passed a direct all-history public-repository secret/private-data scan and completed a read-only GitHub, Supabase, and Vercel configuration readback.
+- Added a locally tested owner-scoped, one-time-display iPhone ingestion credential issuer with HMAC-only storage, bounded expiry, serialized rotation/revocation, and one-active-credential enforcement.
+- Reconciled the iPhone guide with the deployed strict snake_case contract, limited the first Shortcut to five non-Step metrics, and added a local-only Step source-identity diagnostic.
+- Reviewed the current Taxuspt Garmin MCP source and documented a conditional RC9 local-stdio/read-only candidate with a seven-tool allowlist and mandatory dependency/Windows fixes.
+- Passed 282 application tests, 222 agent evaluations, 91 database assertions, five FIT tests, 18 Playwright tests, the Production build, secret scans, private-data scan, and zero-sample local ingestion cleanup.
+- Kept the credential migration and UI local and undeployed. Real data, phone automation, Apple Health access, Garmin authentication, AI, MCP, ChatGPT, Codex, and Garmin cloud remain disabled.
+
 ## 1.0.0-rc7 — 2026-08-31
 
 - Disabled hosted public signup, established one confirmed passwordless owner, verified exact callback URLs, and passed six hosted signup-denial probes.

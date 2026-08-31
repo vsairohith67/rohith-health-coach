@@ -26,6 +26,16 @@ Identity: `OWNER_EMAIL_REDACTED`.
 
 ## Sign-out
 
-The two-user hosted synthetic flow executed global sign-out and post-signout denial successfully. The final owner browser sign-out/revocation check is completed only after the required action-time confirmation; no session value is recorded here.
+After the required action-time confirmation, the owner selected the verified Production `Sign out` control. The application performed global sign-out, redirected to `/sign-in`, and a direct request for `/today` redirected back to `/sign-in`.
+
+Sanitized server-side readback after sign-out:
+
+- Owner Auth identities: 1.
+- Active sessions: 0.
+- Refresh tokens: 0.
+- Health rows checked across the hosted schema: 0.
+- Storage objects: 0.
+
+The two-user hosted synthetic flow also executed global sign-out and post-signout denial successfully.
 
 No health information was connected. No owner address, token, cookie, user ID, or session ID is present in this report.
