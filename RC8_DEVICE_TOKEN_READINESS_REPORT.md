@@ -12,7 +12,7 @@ A complete fix is prepared and green on the local `codex/rc8-unattended-prep` br
 
 ## Prepared implementation
 
-Migration `20260831120000_rc8_owner_ingestion_credentials.sql` adds four narrowly granted owner RPCs:
+Migration `20260831084851_rc8_owner_ingestion_credentials.sql` adds four narrowly granted owner RPCs:
 
 - `create_ingestion_credential(text)` creates an owner-bound Apple Shortcut device and credential in one transaction.
 - `rotate_ingestion_credential(uuid)` revokes prior credentials before returning a replacement once.

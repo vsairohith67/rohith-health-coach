@@ -16,12 +16,16 @@ Immediately before migration, the project had one existing Auth identity and zer
 
 ## Applied migration
 
-The exact reviewed SQL from `supabase/migrations/20260831120000_rc8_owner_ingestion_credentials.sql` was applied once through the official Supabase migration connector. The hosted ledger records it as:
+The exact reviewed SQL from `supabase/migrations/20260831084851_rc8_owner_ingestion_credentials.sql` was applied once through the official Supabase migration connector. The hosted ledger records it as:
 
 - Version: `20260831084851`.
 - Name: `rc8_owner_ingestion_credentials`.
 
 No table was dropped or truncated. No existing health row was rewritten. The migration added the one-active-credential partial unique index, hardened the trusted service issuer, and added the owner-facing create, list, rotate, and revoke RPCs.
+
+## Repository ledger alignment
+
+The seven repository migration filenames now use the exact versions recorded by the hosted Supabase migration ledger. This was a filename-only alignment: SQL contents and execution order were preserved, and no migration was reapplied to Production. It removes the GitHub integration error that reported remote migration versions as missing from the local migrations directory.
 
 ## Hosted security readback
 

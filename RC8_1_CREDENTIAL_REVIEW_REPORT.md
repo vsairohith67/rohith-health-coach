@@ -18,7 +18,7 @@ The migration is additive for the verified zero-credential Production state. It 
 
 ## Changed-file classification
 
-- Database migration: `supabase/migrations/20260831120000_rc8_owner_ingestion_credentials.sql`
+- Database migration: `supabase/migrations/20260831084851_rc8_owner_ingestion_credentials.sql`
 - Database security tests: `supabase/tests/004_rc8_owner_ingestion_credentials.sql`
 - Server credential logic: `apps/web/app/settings/ingestion/actions.ts`
 - Owner page and UI: `apps/web/app/settings/ingestion/page.tsx`, `apps/web/components/ingestion-credential-manager.tsx`, `apps/web/app/styles.css`, and the Settings navigation update
