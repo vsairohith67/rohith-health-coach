@@ -1,6 +1,15 @@
 import { createClient } from "@supabase/supabase-js";
-import * as privateLogin from "../../apps/web/lib/auth/private-login";
+import * as privateLoginImport from "../../apps/web/lib/auth/private-login";
 
+const privateLogin = (
+  "default" in privateLoginImport
+    ? (
+        privateLoginImport as unknown as {
+          default: typeof privateLoginImport;
+        }
+      ).default
+    : privateLoginImport
+) as typeof privateLoginImport;
 const { PRIVATE_SIGN_IN_RESPONSE, requestPrivateSignInLink } = privateLogin;
 
 type SafeError = {
