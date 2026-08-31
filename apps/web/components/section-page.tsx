@@ -230,6 +230,13 @@ export function ProductSection({ section }: Readonly<{ section: string }>) {
               </tr>
             </tbody>
           </table>
+          {section === "data-sources" ? (
+            <p>
+              <Link href="/settings/ingestion">
+                Manage private iPhone ingestion credential →
+              </Link>
+            </p>
+          ) : null}
         </section>
       ) : null}
       {section === "data-sources" ? (

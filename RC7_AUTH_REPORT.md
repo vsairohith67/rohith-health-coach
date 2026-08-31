@@ -37,4 +37,4 @@ Supabase Security Advisor reports:
 1. `request_account_deletion(text)` is intentionally authenticated-executable and `SECURITY DEFINER`. Live audit confirms owner derivation from `auth.uid()`, an exact scope allowlist, empty `search_path`, schema-qualified access, anonymous denial, and no dynamic SQL.
 2. Leaked-password protection is disabled. Supabase documents this as a Pro-plan feature. The real owner flow is passwordless, public signup is disabled, temporary password users were synthetic and deleted, and no paid plan change was made.
 
-Auth gate: **PASS**. Owner browser sign-out evidence is recorded separately in `RC7_OWNER_AUTH_REPORT.md`.
+Auth gate: **PASS**. Owner global sign-out, zero-session readback, and postsignout denial are recorded separately in `RC7_OWNER_AUTH_REPORT.md`.

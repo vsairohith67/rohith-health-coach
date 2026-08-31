@@ -2,12 +2,19 @@
 
 Verified: 2026-08-31
 
-Sanitized aggregate counts after the owner invitation was accepted:
+## Authenticated readback
 
 - Auth users: 1.
 - Confirmed users: 1.
 - Email identities: 1.
-- Sessions: 1.
-- Refresh tokens: 1.
+- A fresh application Magic Link/PKCE callback created a server-recognized owner session.
+- Ten authenticated private routes passed while the session was active.
 
-No email address, user identifier, access token, refresh token, cookie, or session identifier is recorded here. The invitation link arrived through a URL fragment; that fragment was immediately removed from the browser address by navigation to the clean sign-in URL. A fresh application Magic Link/PKCE callback and server-session validation remain the accepted proof path.
+## Final global sign-out readback
+
+- Auth users retained: 1.
+- Active sessions: 0.
+- Refresh tokens: 0.
+- A direct post-signout `/today` request redirected to `/sign-in`.
+
+No email address, user identifier, access token, refresh token, cookie, or session identifier is recorded here. The earlier invitation fragment was removed from the address before the accepted fresh Magic Link/PKCE proof flow.

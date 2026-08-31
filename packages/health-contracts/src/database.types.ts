@@ -1372,6 +1372,15 @@ export type Database = {
       [_ in never]: never;
     };
     Functions: {
+      create_ingestion_credential: {
+        Args: { p_device_name?: string };
+        Returns: {
+          device_id: string;
+          expires_at: string;
+          token: string;
+          token_hint: string;
+        }[];
+      };
       claim_fit_job: {
         Args: { p_worker_id: string };
         Returns: {
@@ -1397,6 +1406,31 @@ export type Database = {
         };
       };
       request_account_deletion: { Args: { p_scope?: string }; Returns: string };
+      list_ingestion_devices: {
+        Args: Record<PropertyKey, never>;
+        Returns: {
+          credential_created_at: string;
+          device_id: string;
+          device_name: string;
+          expires_at: string;
+          last_used_at: string | null;
+          revoked_at: string | null;
+          token_hint: string;
+        }[];
+      };
+      revoke_ingestion_device: {
+        Args: { p_device_id: string };
+        Returns: boolean;
+      };
+      rotate_ingestion_credential: {
+        Args: { p_device_id: string };
+        Returns: {
+          device_id: string;
+          expires_at: string;
+          token: string;
+          token_hint: string;
+        }[];
+      };
       service_issue_ingestion_credential: {
         Args: {
           p_device_id: string;

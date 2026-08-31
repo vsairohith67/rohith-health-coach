@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "project": "Rohith Health Coach",
+  "version": "1.0.0-rc7",
+  "generated_at": "2026-08-31T11:43:48+05:30",
+  "approved_main_commit": "3c32bdfb773ea23601eccad8b2f4af4646b3ec4c",
+  "release_pull_request": 4,
+  "ci_run": 33354423345,
+  "archive": {
+    "filename": "rohith-health-coach-v1.0.0-rc7.zip",
+    "path": "release/rohith-health-coach-v1.0.0-rc7.zip",
+    "sha256": "1b5d3266f52f0a64dc07379d120d68338ed50c22e7e77a8e69cd91342bfb3c4f",
+    "compressed_bytes": 3091127,
+    "uncompressed_bytes": 3780259,
+    "file_count": 340,
+    "data_classification": "synthetic_only",
+    "forbidden_entry_count": 0
+  },
+  "post_merge_sanitized_evidence": [
+    "RC7_AUTH_REPORT.md",
+    "RC7_OWNER_AUTH_REPORT.md",
+    "RC7_SESSION_READBACK_REPORT.md",
+    "RC7_VERCEL_PRODUCTION_REPORT.md",
+    "rc7-deployment-state.json"
+  ],
+  "source_verification": {
+    "frozen_node_install": "passed",
+    "format": "passed",
+    "lint": "passed_zero_warnings",
+    "typecheck": "passed",
+    "unit_integration": "282_of_282_passed",
+    "agent_evaluations": "222_of_222_passed",
+    "database": "55_of_55_passed",
+    "fit": "5_of_5_passed",
+    "playwright": "16_of_16_passed",
+    "production_build": "28_of_28_pages",
+    "secret_scan": "passed_351_text_files_zero_signatures",
+    "evidence_inclusive_secret_scan": "passed_354_text_files_zero_signatures",
+    "private_data_scan": "passed_zero_hits"
+  },
+  "extracted_verification": {
+    "extraction": "passed",
+    "file_count": 340,
+    "version": "1.0.0-rc7",
+    "frozen_node_install": "passed_455_packages",
+    "lint": "passed_zero_warnings",
+    "typecheck": "passed",
+    "unit_integration": "282_of_282_passed",
+    "production_build": "28_of_28_pages",
+    "secret_scan": "passed_334_text_files_zero_signatures",
+    "private_data_scan": "passed_zero_hits"
+  },
+  "hosted_verification": {
+    "public_signup_negative": "6_of_6_passed",
+    "rls": "179_of_179_passed",
+    "private_storage": "21_of_21_passed",
+    "ingestion": "26_of_26_passed",
+    "source_arbitration": "12_of_12_passed",
+    "production_e2e": "24_of_24_passed",
+    "authenticated_pages": "10_of_10_passed",
+    "anonymous_boundary": "13_of_13_denied",
+    "owner_active_sessions": 0,
+    "owner_refresh_tokens": 0,
+    "health_rows": 0,
+    "storage_objects": 0
+  },
+  "github_visibility": "public_user_override",
+  "readiness": "NOT SAFE FOR REAL DATA",
+  "blocking_remediation": "Make the GitHub repository Private and rerun privacy and secret-history verification.",
+  "paid_change_made": false
+}
