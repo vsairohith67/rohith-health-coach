@@ -1,8 +1,8 @@
 # Rohith Health Coach
 
-Rohith Health Coach is a private, evidence-led personal health PWA. The RC8 preparation source combines deterministic aggregation/coaching, passwordless private Auth, an authenticated hosted Production shell, hosted synthetic security evidence, fail-closed source arbitration, and optional AI/MCP surfaces that remain disabled.
+Rohith Health Coach is a private, evidence-led personal health PWA. The RC8.1 source combines deterministic aggregation/coaching, passwordless private Auth, an authenticated hosted Production shell, hosted synthetic security evidence, fail-closed source arbitration, and optional AI/MCP surfaces that remain disabled.
 
-**Release status:** RC8 unattended preparation is local only. The public Git-history safety scan passed and the Production configuration was read back without mutation. The owner device-credential issuer is prepared and locally tested but is not merged or deployed. RC7 remains the hosted Production source, and the real-data pilot has not started.
+**Release status:** RC8.1 contains the reviewed owner device-credential migration and UI. Current hosted and pilot status belongs in the RC8.1 deployment reports rather than this public source overview. The real-data pilot must not start until CI, hosted migration, hosted synthetic lifecycle, Production deployment, and owner handoff gates pass.
 
 ## What works now
 
