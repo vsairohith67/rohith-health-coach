@@ -75,6 +75,110 @@ test("@visual layout tokens and mobile navigation remain stable", async ({
   });
 });
 
+const completeNavigation = [
+  "Today",
+  "Trends",
+  "Sleep",
+  "Heart",
+  "Activity",
+  "Wellbeing",
+  "Coach",
+  "Ask my data",
+  "Experiments",
+  "Reports",
+  "Data sources",
+  "Imports",
+  "iPhone ingestion",
+  "Settings",
+  "AI controls",
+  "Privacy",
+  "Methodology",
+  "Data dictionary",
+  "Welcome",
+] as const;
+
+test("complete desktop navigation scrolls and can collapse", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1024, height: 600 });
+  await page.goto("/today");
+
+  const sidebar = page.getByRole("complementary", { name: "Primary" });
+  const navigation = sidebar.getByRole("navigation", {
+    name: "All features",
+  });
+  for (const label of completeNavigation) {
+    await expect(navigation.getByRole("link", { name: label })).toHaveCount(1);
+  }
+
+  expect(
+    await sidebar.locator(".desktop-nav-scroll").evaluate((element) => {
+      const styles = getComputedStyle(element);
+      return {
+        scrollable: element.scrollHeight > element.clientHeight,
+        overflowY: styles.overflowY,
+      };
+    }),
+  ).toEqual({ scrollable: true, overflowY: "auto" });
+
+  const collapse = page.getByRole("button", { name: "Collapse sidebar" });
+  await expect(collapse).toHaveAttribute("aria-expanded", "true");
+  await collapse.click();
+  await expect(
+    page.getByRole("button", { name: "Expand sidebar" }),
+  ).toHaveAttribute("aria-expanded", "false");
+  await expect(page.locator(".app-shell")).toHaveClass(/sidebar-collapsed/);
+  expect(
+    await sidebar.evaluate((element) => element.getBoundingClientRect().width),
+  ).toBe(84);
+
+  await page.getByRole("button", { name: "Expand sidebar" }).click();
+  await expect(page.locator(".app-shell")).not.toHaveClass(/sidebar-collapsed/);
+});
+
+test("mobile menu exposes every feature and closes safely", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/today");
+  await page.getByRole("button", { name: "Open all navigation" }).click();
+
+  const drawer = page.getByRole("dialog", { name: "All features" });
+  await expect(drawer).toBeVisible();
+  const navigation = drawer.getByRole("navigation", { name: "All features" });
+  for (const label of completeNavigation) {
+    await expect(navigation.getByRole("link", { name: label })).toHaveCount(1);
+  }
+  const accessibility = await new AxeBuilder({ page })
+    .include(".mobile-navigation-drawer")
+    .withTags(["wcag2a", "wcag2aa", "wcag21aa"])
+    .analyze();
+  expect(
+    accessibility.violations.filter((violation) =>
+      ["serious", "critical"].includes(violation.impact ?? ""),
+    ),
+  ).toEqual([]);
+
+  const ingestionLink = navigation.getByRole("link", {
+    name: "iPhone ingestion",
+  });
+  await ingestionLink.scrollIntoViewIfNeeded();
+  expect(
+    await drawer
+      .locator(".mobile-navigation-scroll")
+      .evaluate((element) => element.scrollTop),
+  ).toBeGreaterThan(0);
+  await ingestionLink.click();
+  await expect(
+    page.getByRole("heading", { name: "iPhone ingestion" }),
+  ).toBeVisible();
+  await expect(drawer).toBeHidden();
+
+  await page.getByRole("button", { name: "Open all navigation" }).click();
+  await page.keyboard.press("Escape");
+  await expect(drawer).toBeHidden();
+});
+
 test("PWA manifest and offline shell assets are present", async ({
   request,
 }) => {

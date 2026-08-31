@@ -29,7 +29,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-IN" suppressHydrationWarning>
+    <html lang="en-IN" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to main content
