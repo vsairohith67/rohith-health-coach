@@ -13,4 +13,4 @@
 | FIT cloud worker     | **DISABLED**               |
 | GA eligibility       | **NOT ELIGIBLE**           |
 
-RC5 hosted synthetic component gates passed except Auth. Public Supabase email signup is still enabled, so the authenticated Production shell and full hosted E2E flow remain prohibited. No real health record may enter the system.
+RC7 hosted Auth, private Production, 24/24 synthetic E2E, RLS, Storage, ingestion, source arbitration, export, deletion, and cleanup gates passed. The GitHub repository remains temporarily Public under the user's explicit override, so no real health record may enter the system until it is Private and privacy verification is rerun.

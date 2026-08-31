@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0-rc7 — 2026-08-31
+
+- Disabled hosted public signup, established one confirmed passwordless owner, verified exact callback URLs, and passed six hosted signup-denial probes.
+- Connected the repository to Vercel Git, deployed the private Production shell from exact `main`, and passed authenticated/anonymous route and client-bundle security checks.
+- Added a private owner-scoped export bucket and passed private export, signed expiration, selective deletion, and complete synthetic cleanup gates.
+- Passed 24/24 hosted E2E cases, 179 hosted RLS checks, 21 FIT Storage checks, 26 ingestion checks, and the Garmin 4,861 versus iPhone 8,148 arbitration recheck.
+- Kept real-data readiness blocked because the user explicitly chose to leave the GitHub repository temporarily Public. Real data, AI, MCP, ChatGPT, Codex, phone automation, and Garmin cloud remain disabled.
+
 ## 1.0.0-rc6 — 2026-08-30
 
 - Added real passwordless private login with `shouldCreateUser: false`, generic anti-enumeration feedback, PKCE callback exchange, token-hash confirmation/recovery, verified server identity, and global/local sign-out handling.
