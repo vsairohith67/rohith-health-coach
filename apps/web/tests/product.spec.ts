@@ -183,6 +183,16 @@ test("mobile menu exposes every feature and closes safely", async ({
   await expect(page.getByRole("main")).not.toHaveAttribute("inert", "");
 
   await menuButton.click();
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await expect(drawer).toBeHidden();
+  await expect(page.getByRole("main")).not.toHaveAttribute("inert", "");
+  await expect(
+    page.getByRole("link", { name: "Rohith Health Coach home" }),
+  ).toBeFocused();
+  expect(await page.evaluate(() => document.body.style.overflow)).toBe("");
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await menuButton.click();
 
   const ingestionLink = navigation.getByRole("link", {
     name: "iPhone ingestion",

@@ -77,6 +77,7 @@ export function AppShell({
   const pathname = usePathname();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileNavigationOpen, setMobileNavigationOpen] = useState(false);
+  const desktopBrandRef = useRef<HTMLAnchorElement>(null);
   const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
   const mobileDrawerRef = useRef<HTMLElement>(null);
 
@@ -84,10 +85,16 @@ export function AppShell({
     if (!mobileNavigationOpen) return;
     const drawer = mobileDrawerRef.current;
     const opener = mobileMenuButtonRef.current;
+    const desktopHome = desktopBrandRef.current;
     if (!drawer) return;
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    const desktopMedia = window.matchMedia("(min-width: 821px)");
+    const closeAtDesktopBreakpoint = (event: MediaQueryListEvent) => {
+      if (event.matches) setMobileNavigationOpen(false);
+    };
+    desktopMedia.addEventListener("change", closeAtDesktopBreakpoint);
 
     const focusableSelector = [
       "a[href]",
@@ -138,8 +145,10 @@ export function AppShell({
     document.addEventListener("keydown", containFocus);
     return () => {
       document.removeEventListener("keydown", containFocus);
+      desktopMedia.removeEventListener("change", closeAtDesktopBreakpoint);
       document.body.style.overflow = previousOverflow;
-      opener?.focus();
+      if (desktopMedia.matches) desktopHome?.focus();
+      else opener?.focus();
     };
   }, [mobileNavigationOpen]);
 
@@ -154,6 +163,7 @@ export function AppShell({
       >
         <div className="sidebar-heading">
           <Link
+            ref={desktopBrandRef}
             className="brand"
             href="/today"
             aria-label="Rohith Health Coach home"
